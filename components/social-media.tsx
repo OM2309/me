@@ -3,6 +3,7 @@ import { SocialMediaPlatform } from "@/types";
 import { Github, Instagram, Linkedin, X } from "lucide-react";
 import Resume from "@/components/resume";
 
+
 const SocialMedia = () => {
   const handleNavigate = (socialMediaPlatform: SocialMediaPlatform) => {
     switch (socialMediaPlatform) {

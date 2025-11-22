@@ -146,3 +146,26 @@ body::-webkit-scrollbar {
   display: none;
   /* Chrome / Safari */
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
+/* Chrome, Safari, Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* If a child element inside creates the scrollbar, hide for all descendants */
+.hide-scrollbar * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar *::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

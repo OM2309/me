@@ -15,7 +15,7 @@ export default function Home() {
         <SocialMedia />
       </div>
 
-      <div className="overflow-y-auto h-screen pr-4">
+      <div className="h-screen pr-4 overflow-y-auto hide-scrollbar">
         <Experience />
         <Projects />
         <Technologies />
