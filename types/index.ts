@@ -1,0 +1,1 @@
+export type SocialMediaPlatform = "linkedin" | "github" | "instagram" | "x";
