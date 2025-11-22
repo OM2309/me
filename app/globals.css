@@ -122,7 +122,27 @@
   }
 }
 
-::view-transition-old(root), ::view-transition-new(root) {
-    animation: none;
-    mix-blend-mode: normal;
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html {
+  /* Firefox */
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Chrome / Safari / Edge */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  /* fallback for Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome / Safari */
 }

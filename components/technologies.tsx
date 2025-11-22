@@ -36,7 +36,7 @@ const skills = [
 
 export default function Technologies() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 mb-10">
       <div>
         <p className="font-inter text-lg font-semibold text-black dark:text-white mb-8">
           Technologies & Tools
@@ -49,7 +49,7 @@ export default function Technologies() {
           return (
             <div
               key={skill.name}
-              className="flex items-center gap-2 px-4 py-3 rounded-lg colors border border-dashed border-black dark:border-gray-600"
+              className="flex items-center gap-2 px-4 py-3 rounded-lg colors border border-dashed border-black dark:border-gray-700"
             >
               <Icon className="w-5 h-5 text-gray-300" />
               <span className="font-inter font-semibold text-base leading-[1.6] text-black dark:text-zinc-400 ">
