@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import ModeToggle from "@/components/mode-toggle";
+import Footer from "@/components/footer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,18 +35,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+          className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
         >
-          <ModeToggle />
-          {children}
-        </ThemeProvider>
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ModeToggle />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </body>
     </html>
   );
 }
