@@ -18,9 +18,9 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Project 1 */}
         <Card className="rounded-xl shadow-none overflow-hidden">
-          <div className="w-full h-36 relative -top-8">
+          <div className="w-full h-36 relative -top-8 cursor-pointer transition-all duration-300 ease-in-out hover:opacity-75 hover:blur-sm">
             <Image
-              src="/images/download.jpg"
+              src="/images/portfolio-image.jpg"
               alt="Project 1"
               fill
               className="object-cover"
