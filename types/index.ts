@@ -1,4 +1,4 @@
-export type SocialMediaPlatform = "linkedin" | "github" | "instagram" | "x";
+export type SocialMediaPlatform = "linkedin" | "github" | "instagram" | "x" | "discord";
 
 
 export interface ExperienceCardProps {
@@ -8,4 +8,6 @@ export interface ExperienceCardProps {
   logo: string;
   current: boolean;
   address: string;
+  responsibilities: string[];
+  technologies: string[];
 }

@@ -5,6 +5,7 @@ import GithubContribution from "@/components/github-contribution";
 import Profile from "@/components/profile";
 import Projects from "@/components/projects";
 import SocialMedia from "@/components/social-media";
+import Spotify from "@/components/spotify";
 import Technologies from "@/components/technologies";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
         <Technologies />
         <GithubContribution />
         <Blog />
+        <Spotify />
       </div>
     </div>
   );

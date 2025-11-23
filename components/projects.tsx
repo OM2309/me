@@ -6,6 +6,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import Image from "next/image";
+import { Badge } from "./ui/badge";
 
 export default function Projects() {
   return (
@@ -27,8 +28,14 @@ export default function Projects() {
           </div>
 
           <CardHeader>
-            <CardTitle className="font-inter text-lg font-semibold text-black dark:text-white">
-              Portfolio Website
+            <CardTitle className="font-inter text-lg font-semibold text-black dark:text-white flex items-center">
+              <div className="mr-2">
+                Portfolio Website
+              </div>
+              <Badge variant="secondary" className="dark:text-white text-black">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-spin-slow animate-glow-slow animate-blink"></div>
+                Building
+              </Badge>
             </CardTitle>
             <CardDescription className="font-inter text-base leading-[1.6] text-zinc-600 dark:text-zinc-400">
               A personal portfolio built with Next.js, Tailwind, and shadcn/ui

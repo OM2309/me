@@ -15,6 +15,7 @@ import {
   SiDrizzle,
   SiSass,
 } from "react-icons/si";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 const skills = [
   { name: "Next.js", icon: SiNextdotjs },
@@ -51,10 +52,19 @@ export default function Technologies() {
               key={skill.name}
               className="flex items-center gap-2 px-4 py-3 rounded-lg colors border border-dashed border-black dark:border-gray-700"
             >
-              <Icon className="w-5 h-5 text-gray-300" />
-              <span className="font-inter font-semibold text-base leading-[1.6] text-black dark:text-zinc-400 ">
-                {skill.name}
-              </span>
+              <Tooltip>
+                <TooltipTrigger>
+                  <div className="flex items-center cursor-pointer">
+                    <Icon className="w-5 h-5 text-gray-300 mr-2" />
+                    <span className=" text-black dark:text-zinc-400 ">
+                      {skill.name}
+                    </span>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{skill.name}</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
           );
         })}

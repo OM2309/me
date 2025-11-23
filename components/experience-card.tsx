@@ -3,6 +3,7 @@ import { ExperienceCardProps } from "@/types";
 import { Badge } from "@/components/ui/badge";
 
 
+
 const ExperienceCard = ({
   name,
   role,
@@ -10,6 +11,7 @@ const ExperienceCard = ({
   logo,
   current,
   address,
+  
 }: ExperienceCardProps) => {
   return (
     <div className="flex items-start gap-4 font-inter">
@@ -37,20 +39,22 @@ const ExperienceCard = ({
                   variant="secondary"
                   className="dark:text-white text-black"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                  <div
+                    className="w-1.5 h-1.5 rounded-full bg-green-500 animate-spin-slow animate-glow-slow animate-blink"
+                  ></div>
                   Working
                 </Badge>
               )}
             </div>
           </div>
           <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mt-1">
-            <span>{duration}</span>
+            <span>{duration}</span> 
           </div>
         </div>
 
         <div className="flex flex-row items-center gap-2 justify-between">
           <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mt-1">
-            <span>{role}</span>
+            <span>{role}</span> 
           </div>
           <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mt-1">
             <span>{address}</span>

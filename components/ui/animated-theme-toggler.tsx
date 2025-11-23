@@ -1,11 +1,12 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Moon, Sun } from "lucide-react";
 import { flushSync } from "react-dom";
 
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
+import { MoonIcon } from "../animated-icons/moon";
+import { SunMediumIcon } from "../animated-icons/sun";
 
 interface AnimatedThemeTogglerProps
   extends React.ComponentPropsWithoutRef<"button"> {
@@ -48,6 +49,11 @@ export const AnimatedThemeToggler = ({
       });
     }).ready;
 
+    // 👉 Play audio on toggle
+    const audio = new Audio("/audio/light.mp3");
+    audio.volume = 0.5;
+    audio.play().catch(() => {});
+
     const { top, left, width, height } =
       buttonRef.current.getBoundingClientRect();
     const x = left + width / 2;
@@ -81,7 +87,7 @@ export const AnimatedThemeToggler = ({
       className={cn(className)}
       {...props}
     >
-      {isDark ? <Sun /> : <Moon />}
+      {isDark ? <SunMediumIcon /> :  <MoonIcon />}
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
