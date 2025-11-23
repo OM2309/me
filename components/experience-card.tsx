@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ExperienceCardProps } from "@/types";
 import { Badge } from "@/components/ui/badge";
-import { BadgeCheckIcon } from "lucide-react";
+
 
 const ExperienceCard = ({
   name,

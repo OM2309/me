@@ -62,6 +62,52 @@ export default function Projects() {
 
           <CardFooter>Technologies</CardFooter>
         </Card>
+        {/* Project 2 */}
+        <Card className=" rounded-xl shadow-none overflow-hidden">
+          <div className="w-full h-36 relative -top-8">
+            <Image
+              src="/images/download.jpg"
+              alt="Project 2"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <CardHeader>
+            <CardTitle className="font-inter text-lg font-semibold text-black dark:text-white">
+              Real-time Chat App
+            </CardTitle>
+            <CardDescription className="font-inter text-base leading-[1.6] text-zinc-600 dark:text-zinc-400">
+              A real-time chat application using Next.js, Socket.io, and MongoDB
+              with live typing indicators and online status.
+            </CardDescription>
+          </CardHeader>
+
+          <CardFooter>Technologies</CardFooter>
+        </Card>
+        {/* Project 2 */}
+        <Card className=" rounded-xl shadow-none overflow-hidden">
+          <div className="w-full h-36 relative -top-8">
+            <Image
+              src="/images/download.jpg"
+              alt="Project 2"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <CardHeader>
+            <CardTitle className="font-inter text-lg font-semibold text-black dark:text-white">
+              Real-time Chat App
+            </CardTitle>
+            <CardDescription className="font-inter text-base leading-[1.6] text-zinc-600 dark:text-zinc-400">
+              A real-time chat application using Next.js, Socket.io, and MongoDB
+              with live typing indicators and online status.
+            </CardDescription>
+          </CardHeader>
+
+          <CardFooter>Technologies</CardFooter>
+        </Card>
       </div>
     </div>
   );

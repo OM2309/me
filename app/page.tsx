@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Blog from "@/components/blog";
 import Experience from "@/components/experience";
 import GithubContribution from "@/components/github-contribution";
 import Profile from "@/components/profile";
@@ -20,6 +21,7 @@ export default function Home() {
         <Projects />
         <Technologies />
         <GithubContribution />
+        <Blog />
       </div>
     </div>
   );
