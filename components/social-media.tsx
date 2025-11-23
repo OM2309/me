@@ -6,8 +6,11 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 import { FaDiscord } from "react-icons/fa";
+import Contact from "./contact";
+import Appreciation from "./appereciation";
+import { SiGmail } from "react-icons/si";
 
 const SocialMedia = () => {
   const handleNavigate = (socialMediaPlatform: SocialMediaPlatform) => {
@@ -27,72 +30,92 @@ const SocialMedia = () => {
       case "discord":
         window.open("https://discord.com/users/anuragsharma_13107", "_blank");
         break;
+      case "gmail":
+        window.open("mailto:23anuragsharma@gmail.com", "_blank");
+        break;
     }
   };
 
   return (
-    <div className="flex justify-between max-w-lg items-center">
-      <div className="p-4 grid grid-cols-6 gap-4">
-        <Tooltip>
-          <TooltipTrigger>
-            <Linkedin
-              onClick={() => handleNavigate("linkedin")}
-              className="cursor-pointer w-5 h-5"
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>LinkedIn</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <Github
-              onClick={() => handleNavigate("github")}
-              className="cursor-pointer w-5 h-5"
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>GitHub</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <Instagram
-              onClick={() => handleNavigate("instagram")}
-              className="cursor-pointer w-5 h-5"
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Instagram</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <X
-              onClick={() => handleNavigate("x")}
-              className="cursor-pointer w-5 h-5"
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>X</p>
-          </TooltipContent>
-        </Tooltip>
-        <Tooltip>
-          <TooltipTrigger>
-            <FaDiscord
-              onClick={() => handleNavigate("discord")}
-              className="cursor-pointer w-5 h-5"
-            />
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>Discord</p>
-          </TooltipContent>
-        </Tooltip>
+    <>
+      <div className="flex justify-between max-w-lg items-center">
+        <div className="p-4 grid grid-cols-6 gap-4">
+          <Tooltip>
+            <TooltipTrigger>
+              <Linkedin
+                onClick={() => handleNavigate("linkedin")}
+                className="cursor-pointer w-5 h-5"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>LinkedIn</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <Github
+                onClick={() => handleNavigate("github")}
+                className="cursor-pointer w-5 h-5"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>GitHub</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <Instagram
+                onClick={() => handleNavigate("instagram")}
+                className="cursor-pointer w-5 h-5"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Instagram</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <X
+                onClick={() => handleNavigate("x")}
+                className="cursor-pointer w-5 h-5"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>X</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <FaDiscord
+                onClick={() => handleNavigate("discord")}
+                className="cursor-pointer w-5 h-5"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Discord</p>
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger>
+              <SiGmail
+                onClick={() => handleNavigate("gmail")}
+                className="cursor-pointer w-5 h-5"
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Gmail</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
+        <div>
+          <Appreciation />
+        </div>
       </div>
-      <div>
+      <div className="flex items-center gap-4 mt-4">
         <Resume />
+        <Contact />
       </div>
-    </div>
+    </>
   );
 };
 
