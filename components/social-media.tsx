@@ -22,7 +22,7 @@ const SocialMedia = () => {
         window.open("https://github.com/OM2309/", "_blank");
         break;
       case "instagram":
-        window.open("https://instagram.com/anurag_sharma", "_blank");
+        window.open("https://instagram.com/_whyom", "_blank");
         break;
       case "x":
         window.open("https://x.com/0xAnuragWeb", "_blank");
