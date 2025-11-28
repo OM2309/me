@@ -8,7 +8,7 @@ Live Website → [https://anurag-uat.vercel.app](https://anurag-uat.vercel.app)
 
 ## About Me
 
-Hi I'm **Anurag**, a passionate Full-Stack Web Developer with real-world experience at **Octal IT Solution** and **Kalazara Technologies**. I love building performant, beautiful, and user-centric web applications using modern technologies.
+Hi I'm **Anurag**, a passionate Full-Stack Developer with real-world experience at **Octal IT Solution** and **Kalazara Technologies**. I love building performant, beautiful, and user-centric web applications using modern technologies.
 
 Currently open to remote/full-time opportunities
 
