@@ -11,16 +11,13 @@ import Technologies from "@/components/technologies";
 export default function Home() {
   return (
     <div className="bg-background text-foreground">
-      {/* Add top padding instead of mt-20 on child */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 py-10  mx-auto">
-        {/* Left Column - Fixed width, sticky */}
         <aside className="lg:col-span-6 space-y-8 lg:sticky lg:top-10 lg:h-fit">
           <Profile />
           <About />
           <SocialMedia />
         </aside>
 
-        {/* Right Column - Scrollable content */}
         <main className="lg:col-span-6 space-y-12 pb-20">
           <Experience />
           <Projects />
