@@ -44,7 +44,7 @@ const About = () => {
 
      
       <p className="mt-6 text-base italic text-zinc-500 dark:text-zinc-400">
-        — powered by chai and late-night focus sessions <BiCoffee className="inline ml-1" />
+        — powered by chai and late-night focus sessions <BiCoffee className="inline ml-1 text-orange-500 transform rotate-12" />
       </p>
     </section>
   );

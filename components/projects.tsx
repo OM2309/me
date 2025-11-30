@@ -25,7 +25,7 @@ export default function Projects() {
             <Card className="rounded-md shadow-none overflow-hidden">
               <div className="w-full h-36 relative -top-8 cursor-pointer transition-all duration-300 ease-in-out hover:opacity-75 hover:blur-sm">
                 <Image
-                  src="/images/portfolio-image.jpg"
+                  src={p.image}
                   alt="Project 1"
                   fill
                   className="object-cover"
