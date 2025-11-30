@@ -11,3 +11,12 @@ export interface ExperienceCardProps {
   responsibilities: string[];
   technologies: string[];
 }
+
+
+export interface Project {
+  name: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  status: "complete" | "building";
+}
