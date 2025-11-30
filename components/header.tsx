@@ -7,6 +7,9 @@ const Header: React.FC = () => {
   return (
     <div>
       <div className="flex justify-end items-center p-4 gap-4">
+        <Link href="/about">
+          <p className="font-inter text-sm dark:text-white text-black">About</p>
+        </Link>
         <Link href="/blogs">
           <p className="font-inter text-sm dark:text-white text-black">Blogs</p>
         </Link>
