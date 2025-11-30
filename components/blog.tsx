@@ -25,7 +25,7 @@ export default function Blog() {
 
   return (
     <div className="space-y-6 mb-10">
-      <h1 className="font-inter text-lg font-semibold text-black dark:text-white">
+      <h1 className="  text-lg font-semibold text-black dark:text-white">
         Blog
       </h1>
 
@@ -42,10 +42,10 @@ export default function Blog() {
             </div>
 
             <CardHeader>
-              <CardTitle className="font-inter text-lg font-semibold text-black dark:text-white">
+              <CardTitle className="  text-lg font-semibold text-black dark:text-white">
                 {blog.title}
               </CardTitle>
-              <CardDescription className="font-inter text-base leading-[1.6] text-zinc-600 dark:text-zinc-400">
+              <CardDescription className="  text-base leading-[1.6] text-zinc-600 dark:text-zinc-400">
                 {blog.description}
               </CardDescription>
             </CardHeader>

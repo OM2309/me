@@ -1,16 +1,12 @@
 "use client";
 import { SocialMediaPlatform } from "@/types";
-import { Github, Instagram, Linkedin, X } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import Resume from "@/components/resume";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import { FaDiscord } from "react-icons/fa";
 import Contact from "./contact";
 import Appreciation from "./appereciation";
-import { SiGmail } from "react-icons/si";
+import React from "react";
+
+import { socialIcons } from "@/data/icons/social-icons"; 
 
 const SocialMedia = () => {
   const handleNavigate = (socialMediaPlatform: SocialMediaPlatform) => {
@@ -36,76 +32,34 @@ const SocialMedia = () => {
     }
   };
 
+  // Helper to map name to platform (handles 'Git & GitHub' specially)
+  const getPlatform = (name: string): SocialMediaPlatform => {
+    const lower = name.toLowerCase();
+    if (lower.includes("github")) return "github";
+    if (lower === "x") return "x";
+    return lower as SocialMediaPlatform;
+  };
+
   return (
     <>
       <div className="flex justify-between max-w-lg items-center">
         <div className="p-4 grid grid-cols-6 gap-4">
-          <Tooltip>
-            <TooltipTrigger>
-              <Linkedin
-                onClick={() => handleNavigate("linkedin")}
-                className="cursor-pointer w-5 h-5"
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>LinkedIn</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <Github
-                onClick={() => handleNavigate("github")}
-                className="cursor-pointer w-5 h-5"
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>GitHub</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <Instagram
-                onClick={() => handleNavigate("instagram")}
-                className="cursor-pointer w-5 h-5"
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Instagram</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <X
-                onClick={() => handleNavigate("x")}
-                className="cursor-pointer w-5 h-5"
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>X</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <FaDiscord
-                onClick={() => handleNavigate("discord")}
-                className="cursor-pointer w-5 h-5"
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Discord</p>
-            </TooltipContent>
-          </Tooltip>
-          <Tooltip>
-            <TooltipTrigger>
-              <SiGmail
-                onClick={() => handleNavigate("gmail")}
-                className="cursor-pointer w-5 h-5"
-              />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Gmail</p>
-            </TooltipContent>
-          </Tooltip>
+          {socialIcons.map((social) => (
+            <Tooltip key={social.name}>
+              <TooltipTrigger>
+                {React.cloneElement(social.icon as React.ReactElement, {
+                  className:
+                    (social.icon as React.ReactElement).props.className
+                      .replace("text-4xl", "") // Remove large size from data
+                      .trim() + " cursor-pointer w-5 h-5",
+                  onClick: () => handleNavigate(getPlatform(social.name)),
+                })}
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{social.name}</p>
+              </TooltipContent>
+            </Tooltip>
+          ))}
         </div>
         <div>
           <Appreciation />

@@ -52,7 +52,7 @@ const ContactForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-6 font-inter"
+        className="space-y-6  "
       >
         <div className="grid grid-cols-2 gap-4">
           <FormField

@@ -1,17 +1,20 @@
-const Footer = () => {
-  return (
-    <footer className=" ">
-      <div className="flex flex-col justify-center items-center my-10 ">
-        <p className="font-inter text-center text-zinc-600 dark:text-zinc-400 text-md font-normal">
-          Design and Developed by{" "}
-          <span className="underline font-semibold">Anurag</span>
-        </p>
-        <p className="font-inter text-center text-zinc-600 dark:text-zinc-400 text-sm font-normal ">
-          &copy; {new Date().getFullYear()}. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
-};
+import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
 
-export default Footer;
+export default function Footer() {
+  return (
+    <section className="mt-12 border-t pt-4 pb-6 max-w-2xl mx-auto">
+      <footer className="text-sm text-muted-foreground flex justify-between items-center w-full mono">
+        <div>© 2025 Anurag Sharma</div>
+        <Link
+          href="https://github.com/OM2309"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline flex items-center gap-1"
+        >
+          <FaGithub className="text-xl" /> GitHub
+        </Link>
+      </footer>
+    </section>
+  );
+}

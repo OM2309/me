@@ -5,7 +5,7 @@ const Blog = () => {
     <>
       <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center w-full">
-          <p className="font-inter text-4xl font-semibold text-black dark:text-white">
+          <p className=" text-4xl font-semibold text-black dark:text-white">
             Coming Soon
           </p>
         </div>

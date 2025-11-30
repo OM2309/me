@@ -4,7 +4,7 @@ const Spotify = () => {
   return (
     <div className="mt-6 mb-20">
       <div>
-        <p className="font-inter text-lg font-semibold text-black dark:text-white mb-8">
+        <p className="  text-lg font-semibold text-black dark:text-white mb-8">
           Songs
         </p>
       </div>

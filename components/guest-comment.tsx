@@ -48,7 +48,7 @@ const comments = [
 
 export default function GuestComments() {
   return (
-    <div className="max-w-2xl mx-auto space-y-8 py-12 px-4 font-inter">
+    <div className="max-w-2xl mx-auto space-y-8 py-12 px-4  ">
       {comments.map((comment) => (
         <div key={comment.id} className="flex gap-4 pb-8 border-b border-zinc-800 last:border-0">
           <Avatar className="h-12 w-12 ring-2 ring-zinc-800 ring-offset-2 ring-offset-black">

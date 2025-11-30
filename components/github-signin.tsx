@@ -25,10 +25,10 @@ export default function GithubSignIn() {
         <div className="border border-dashed border-zinc-800 rounded-xl p-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
             <div className="text-center sm:text-left ">
-              <h3 className="text-lg font-inter dark:text-white text-black ">
+              <h3 className="text-lg   dark:text-white text-black ">
                 Sign in to write
               </h3>
-              <p className="text-sm text-zinc-400 font-inter">
+              <p className="text-sm text-zinc-400  ">
                 Authenticate via GitHub to prevent spam
               </p>
             </div>
@@ -36,7 +36,7 @@ export default function GithubSignIn() {
             <Button
               size="lg"
               onClick={handleGitHubSignIn}
-              className="w-full sm:w-auto font-inter rounded-md px-6 shadow-lg transition"
+              className="w-full sm:w-auto   rounded-md px-6 shadow-lg transition"
             >
               <Github className="mr-2 h-5 w-5" />
                GitHub

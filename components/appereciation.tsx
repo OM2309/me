@@ -49,7 +49,7 @@ const Appreciation = () => {
           isAnimating && "animate-bounce-once"
         )}
       />
-      <span className="font-medium font-inter">
+      <span className="font-medium  ">
         {isAppreciated ? "Appreciated" : "Appreciate"}
       </span>
     </Button>

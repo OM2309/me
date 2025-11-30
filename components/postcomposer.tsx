@@ -55,13 +55,13 @@ export default function PostComposer() {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-          <span className="font-inter">
+          <span className=" ">
             Signed in as <span className="text-white font-medium">{username}</span>
           </span>
         </div>
         <button
           onClick={() => signOut()}
-          className="text-sm text-zinc-500 hover:text-zinc-300 transition font-inter cursor-pointer"
+          className="text-sm text-zinc-500 hover:text-zinc-300 transition   cursor-pointer"
         >
           Sign out
         </button>
@@ -90,7 +90,7 @@ export default function PostComposer() {
           <Button
             type="submit"
             // disabled={isSubmitting || !isValid || charCount === 0}
-            className="font-inter rounded-md"
+            className="  rounded-md"
             size="lg"
           >
             {isSubmitting ? "Posting..." : "Post"}

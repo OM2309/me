@@ -5,7 +5,7 @@ import { GitHubCalendar } from "react-github-calendar";
 export default function GithubContribution() {
   return (
     <div className="space-y-4 mb-10">
-      <h1 className="font-inter text-lg font-semibold text-black dark:text-white">
+      <h1 className="  text-lg font-semibold text-black dark:text-white">
         GitHub Contributions
       </h1>
       <div className="overflow-x-auto">

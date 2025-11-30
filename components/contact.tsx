@@ -12,7 +12,7 @@ const Contact = () => {
         className="text-white dark:text-black dark:bg-white bg-black  ml-2 cursor-pointer border border-gray-700"
       >
         <Send className="w-5 h-5" />
-        <span className="font-inter font-semibold text-base leading-[1.6]">
+        <span className="  font-semibold text-base leading-[1.6]">
           Get in touch
         </span>
       </Button>

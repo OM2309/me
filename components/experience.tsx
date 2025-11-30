@@ -37,7 +37,7 @@ const Experience = () => {
   ]
   return (
     <div className="space-y-6 mb-10">
-      <h1 className="font-inter text-lg font-semibold text-black dark:text-white">
+      <h1 className="  text-lg font-semibold text-black dark:text-white">
         Experience
       </h1>
       <div className="space-y-6">
