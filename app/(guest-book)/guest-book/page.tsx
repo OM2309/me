@@ -1,4 +1,5 @@
 import GithubSignIn from "@/components/github-signin";
+import GuestComments from "@/components/guest-comment";
 import { Separator } from "@/components/ui/separator";
 
 const GuestBook = () => {
@@ -17,7 +18,9 @@ const GuestBook = () => {
         <Separator className="my-14 w-8" />
       </div>
 
-      <GithubSignIn />
+      <GithubSignIn />  
+      <GuestComments />
+
     </>
   );
 };

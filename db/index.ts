@@ -2,13 +2,16 @@ import 'dotenv/config'
 import { drizzle } from 'drizzle-orm/postgres-js'
 import postgres from 'postgres'
 
-let connectionString = process.env.DATABASE_URL
-
-if (host.includes('postgres:postgres@supabase_db_')) {
-  const url = URL.parse(host)!
-  url.hostname = url.hostname.split('_')[1]
-  connectionString = url.href
+if (!process.env.DATABASE_URL) {
+  throw new Error('DATABASE_URL environment variable is not set')
 }
 
-export const client = postgres(connectionString, { prepare: false })
+const connectionString = process.env.DATABASE_URL
+
+// Create a single connection to the database
+export const client = postgres(connectionString, { 
+  prepare: false,
+  max: 1 
+})
+
 export const db = drizzle(client);
