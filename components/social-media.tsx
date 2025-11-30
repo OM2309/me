@@ -6,7 +6,7 @@ import Contact from "./contact";
 import Appreciation from "./appereciation";
 import React from "react";
 
-import { socialIcons } from "@/data/icons/social-icons"; 
+import { socialIcons } from "@/data/icons/social-icons";
 
 const SocialMedia = () => {
   const handleNavigate = (socialMediaPlatform: SocialMediaPlatform) => {
@@ -47,13 +47,12 @@ const SocialMedia = () => {
           {socialIcons.map((social) => (
             <Tooltip key={social.name}>
               <TooltipTrigger>
-                {React.cloneElement(social.icon as React.ReactElement, {
-                  className:
-                    (social.icon as React.ReactElement).props.className
-                      .replace("text-4xl", "") // Remove large size from data
-                      .trim() + " cursor-pointer w-5 h-5",
-                  onClick: () => handleNavigate(getPlatform(social.name)),
-                })}
+                <button
+                  onClick={() => handleNavigate(getPlatform(social.name))}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {social.icon}
+                </button>
               </TooltipTrigger>
               <TooltipContent>
                 <p>{social.name}</p>

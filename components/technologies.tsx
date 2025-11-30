@@ -18,11 +18,9 @@ export default function Technologies() {
           <Tooltip key={skill.name}>
             <TooltipTrigger asChild>
               <div className="group flex flex-col items-center justify-center gap-3 p-5 cursor-pointer">
-                {React.cloneElement(skill.icon as React.ReactElement, {
-                  className:
-                    (skill.icon as React.ReactElement).props.className +
-                    " group-hover:scale-110 transition-transform",
-                })}
+                <div className="transition-transform group-hover:scale-110">
+                  {skill.icon}
+                </div>
                 <span className="text-sm font-medium text-black dark:text-zinc-300 whitespace-nowrap">
                   {skill.name}
                 </span>
@@ -32,6 +30,7 @@ export default function Technologies() {
               <p>{skill.name}</p>
             </TooltipContent>
           </Tooltip>
+          
         ))}
       </div>
     </div>
