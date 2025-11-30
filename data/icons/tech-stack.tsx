@@ -42,7 +42,7 @@ export const webdev = [
   },
   {
     name: 'React Native',
-    description: 'A JavaScript library for building mobile apps',
+    description: 'building mobile apps',
     icon: <FaReact className="text-sky-400 text-4xl" />,
   },
   {

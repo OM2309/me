@@ -6,12 +6,15 @@ import ModeToggle from "./mode-toggle";
 const Header: React.FC = () => {
   return (
     <div>
-      <div className="flex justify-end items-center p-4 gap-4">
+      <div className="flex justify-end items-center p-4 gap-4 font-jetbrains-mono ">
+        <Link href="/about">
+          <p className="text-sm text-foreground/70 hover:text-foreground">About</p>
+        </Link>
         <Link href="/blog">
-          <p className="  text-sm dark:text-white text-black">Blog</p>
+          <p className="  text-sm text-foreground/70 hover:text-foreground">Blog</p>
         </Link>
         <Link href="/guest-book">
-          <p className="  text-sm dark:text-white text-black">
+          <p className="  text-sm text-foreground/70 hover:text-foreground">
             Guestbook
           </p>
         </Link>

@@ -1,7 +1,6 @@
 import About from "@/components/about";
 import Blog from "@/components/blog";
 import Experience from "@/components/experience";
-import GithubContribution from "@/components/github-contribution";
 import Profile from "@/components/profile";
 import Projects from "@/components/projects";
 import SocialMedia from "@/components/social-media";
@@ -22,7 +21,6 @@ export default function Home() {
           <Experience />
           <Projects />
           <Technologies />
-          <GithubContribution />
           <Blog />
           <Spotify />
         </main>
