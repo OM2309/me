@@ -43,13 +43,12 @@ export default function Projects() {
                     {p.status.charAt(0).toUpperCase() + p.status.slice(1)}
                   </Badge>
                 </CardTitle>
-                <CardDescription className="  text-base leading-[1.6] text-zinc-600 dark:text-zinc-400">
+                <CardDescription className="  text-base leading-[1.6] text-zinc-600 dark:text-zinc-400 line-clamp-3">
                   {p.description}
                 </CardDescription>
               </CardHeader>
 
-              <CardFooter className="flex flex-col items-center gap-3 pt-4 border-t border-border">
-                <span className="text-xs font-medium text-muted-foreground">Built with:</span>
+              <CardFooter className="flex flex-col items-center gap-3 pt-4 border-t border-border line-clamp-2">
 
                 <div className="flex flex-wrap items-center gap-2 justify-start">
                   {p.technologies.map((tech) => (

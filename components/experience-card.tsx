@@ -47,16 +47,16 @@ const ExperienceCard = ({
               )}
             </div>
           </div>
-          <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mt-1">
+          <div className="flex items-center gap-2 leading-relaxed text-zinc-600 dark:text-zinc-300 text-sm mt-1">
             <span>{duration}</span> 
           </div>
         </div>
 
         <div className="flex flex-row items-center gap-2 justify-between">
-          <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 text-sm mt-1">
+          <div className="flex items-center gap-2 leading-relaxed text-zinc-600 dark:text-zinc-300 text-sm mt-1">
             <span>{role}</span> 
           </div>
-          <div className="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm mt-1">
+          <div className="flex items-center gap-2  leading-relaxed text-zinc-600 dark:text-zinc-300 text-sm mt-1">
             <span>{address}</span>
           </div>
         </div>

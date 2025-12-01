@@ -8,7 +8,7 @@ const comments = [
     id: 1,
     name: "Anurag Sharma",
     username: "anurag",
-    avatar: "https://github.com/mps.png",
+    avatar: "/images/download.jpg",
     content: "Guys Make sure to drop a nice review",
     timestamp: new Date(Date.now() - 4.5 * 24 * 60 * 60 * 1000), // ~4-5 days ago
     isAuthor: true,
@@ -60,7 +60,7 @@ export default function GuestComments() {
 
           <div className="flex-1 space-y-1">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-medium text-white">{comment.name}</span>
+              <span className="font-jetbrains-mono">{comment.name}</span>
 
               {comment.isAuthor && (
                 <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
@@ -77,7 +77,7 @@ export default function GuestComments() {
               </span>
             </div>
 
-            <p className="text-zinc-300 leading-relaxed">
+            <p className="text-md leading-relaxed text-zinc-600 dark:text-zinc-300">
               {comment.content}
             </p>
           </div>
