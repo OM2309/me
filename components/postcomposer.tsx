@@ -1,12 +1,12 @@
-// components/PostComposer.tsx
 "use client";
-
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useSession, signOut } from "@/lib/auth-client";
+import { createComment } from "@/actions/comment";
+
 
 
 const postSchema = z.object({
@@ -16,7 +16,7 @@ const postSchema = z.object({
 type PostFormData = z.infer<typeof postSchema>;
 const MAX_CHARS = 500;
 
-export default function PostComposer() {
+export default function PostComposer({ fetchComments }: { fetchComments: () => void }) {
   const { data: session } = useSession();
 
   const username =
@@ -29,7 +29,7 @@ export default function PostComposer() {
     handleSubmit,
     watch,
     reset,
-    formState: { errors, isSubmitting, isValid },
+    formState: { errors, isSubmitting },
   } = useForm<PostFormData>({
     resolver: zodResolver(postSchema),
     defaultValues: { content: "" },
@@ -39,8 +39,11 @@ export default function PostComposer() {
   const charCount = content.length;
 
   const onSubmit = async (data: PostFormData) => {
-    console.log("New post:", data.content);
-    reset();
+    const comment = await createComment(data.content, session?.user?.id);
+    if (comment?.success) {
+      await fetchComments();
+      reset();
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -49,9 +52,11 @@ export default function PostComposer() {
     }
   };
 
+
+
+
   return (
     <div className="space-y-6">
-      {/* Signed in status */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -67,7 +72,7 @@ export default function PostComposer() {
         </button>
       </div>
 
-      {/* Composer */}
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="relative">
           <Textarea
@@ -86,15 +91,14 @@ export default function PostComposer() {
           <p className="text-sm text-red-400">Please enter minimum 5 character</p>
         )}
 
-        <div className="flex justify-end items-center">
+        <div className="flex justify-end items-center ">
           <Button
             type="submit"
-            // disabled={isSubmitting || !isValid || charCount === 0}
-            className="  rounded-md"
+            className="cursor-pointer rounded-md"
             size="lg"
           >
             {isSubmitting ? "Posting..." : "Post"}
-       
+
           </Button>
         </div>
       </form>

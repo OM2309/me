@@ -6,7 +6,7 @@ import { signIn, useSession } from "@/lib/auth-client";
 import { Github } from "lucide-react";
 import PostComposer from "./postcomposer";
 
-export default function GithubSignIn() {
+export default function GithubSignIn({fetchComments}: {fetchComments: () => void}) {
   const { data: session } = useSession();
 
   const handleGitHubSignIn = async () => {
@@ -14,14 +14,11 @@ export default function GithubSignIn() {
   };
 
 
-
   return (
     <div className="max-w-2xl mx-auto">
       {session ? (
-
-        <PostComposer />
+        <PostComposer fetchComments={fetchComments}/>
       ) : (
-
         <div className="border border-dashed border-zinc-800 rounded-xl p-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
             <div className="text-center sm:text-left ">
@@ -36,10 +33,10 @@ export default function GithubSignIn() {
             <Button
               size="lg"
               onClick={handleGitHubSignIn}
-              className="w-full sm:w-auto   rounded-md px-6 shadow-lg transition"
+              className="w-full sm:w-auto rounded-md px-6 shadow-lg transition"
             >
               <Github className="mr-2 h-5 w-5" />
-               GitHub
+              GitHub
             </Button>
           </div>
         </div>

@@ -20,3 +20,12 @@ export interface Project {
   technologies: string[];
   status: "complete" | "building";
 }
+
+export interface Comment {
+  id: string;
+  content: string;
+  createdAt: Date;
+  userName: string;
+  userImage: string;
+  userType: string;
+}

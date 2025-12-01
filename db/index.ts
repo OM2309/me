@@ -8,7 +8,7 @@ if (!process.env.DATABASE_URL) {
 
 const connectionString = process.env.DATABASE_URL
 
-// Create a single connection to the database
+
 export const client = postgres(connectionString, { 
   prepare: false,
   max: 1 
