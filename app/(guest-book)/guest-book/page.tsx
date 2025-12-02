@@ -3,40 +3,45 @@
 import { fetchComments } from "@/actions/comment";
 import GithubSignIn from "@/components/github-signin";
 import GuestComments from "@/components/guest-comment";
-import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
 
-const GuestBook = () => {
-  const [newComments, setNewComments] = useState();
+type Comment = {
+  id: number;
+  content: string;
+  createdAt: Date;
+  userName: string | null;
+  userImage: string | null;
+  userType: string | null;
+};
 
-  const fetchData = async () => {
-    const comments = await fetchComments();
-    setNewComments(comments?.comments);
+export default function GuestBook() {
+  const [comments, setComments] = useState<Comment[] | undefined>(undefined);
+
+  const loadComments = async () => {
+    const data = await fetchComments();
+    setComments(data?.comments ?? []);
   };
 
   useEffect(() => {
-    fetchData();
+    loadComments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <>
       <div className="flex flex-col items-center justify-center max-w-2xl mx-auto mt-10">
         <div className="flex flex-col w-full mb-10">
-          <p className=" text-2xl font-semibold text-black dark:text-white ">
+          <p className="text-2xl font-semibold text-black dark:text-white">
             Guestbook
           </p>
           <p className="text-md font-normal text-black dark:text-zinc-400">
-            Leave a permanent mark. Share thoughts, feedback, or just verify
-            your visit.
+            Leave a permanent mark. Share thoughts, feedback, or just verify your visit.
           </p>
         </div>
-        {/* <Separator className="my-14 w-8" /> */}
       </div>
 
-      <GithubSignIn fetchComments={fetchData}/>
-      <GuestComments comments={newComments} fetchComments={fetchData} />
+      <GithubSignIn fetchComments={loadComments} />
+      <GuestComments comments={comments} fetchComments={loadComments} />
     </>
   );
-};
-
-export default GuestBook;
+}
