@@ -21,11 +21,11 @@ export interface Project {
   status: "complete" | "building";
 }
 
-export interface Comment {
-  id: string;
+export type Comment = {
+  id: number;
   content: string;
-  createdAt: Date;
-  userName: string;
-  userImage: string;
-  userType: string;
-}
+  createdAt: string | Date;
+  userName: string | null;
+  userImage: string | null;
+  userType: "admin" | "github" | null;
+};
