@@ -1,11 +1,12 @@
 "use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Trash, Verified } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { deleteComment } from "@/actions/comment";
 import { Comment } from "@/types";
-import { useSession } from "next-auth/react"; 
+import { useSession } from "@/lib/auth-client";
 
 type GuestCommentsProps = {
   comments?: Comment[];
@@ -18,19 +19,9 @@ const GuestComments = ({ comments = [], fetchComments }: GuestCommentsProps) => 
   const isAdmin = session?.user?.role === "admin";
 
   const handleDelete = async (id: number) => {
-    if (confirm("Are you sure you want to delete this comment?")) {
       await deleteComment(id);
-      await fetchComments();
-    }
+      await fetchComments();  
   };
-
-  if (!comments.length) {
-    return (
-      <div className="max-w-2xl mx-auto py-12 px-4 text-center text-zinc-500">
-        No messages yet. Be the first to sign the guestbook!
-      </div>
-    );
-  }
 
   return (
     <div className="max-w-2xl mx-auto space-y-8 py-12 px-4">
@@ -90,7 +81,6 @@ const GuestComments = ({ comments = [], fetchComments }: GuestCommentsProps) => 
                   </button>
                 )}
               </div>
-
               <p className="text-zinc-300 leading-relaxed">{comment.content}</p>
             </div>
           </div>
