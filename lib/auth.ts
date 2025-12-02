@@ -20,18 +20,4 @@ export const auth = betterAuth({
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
   },
-
-  session: {
-    updateSession: async (user) => {
-      return {
-        user: {
-          id: user.id,
-          name: user.name,
-          email: user.email,
-          image: user.image,
-          userType: user.userType, 
-        },
-      };
-    },
-  },
 });
