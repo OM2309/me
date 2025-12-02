@@ -1,4 +1,5 @@
 "use client";
+
 import { fetchComments } from "@/actions/comment";
 import GithubSignIn from "@/components/github-signin";
 import GuestComments from "@/components/guest-comment";
@@ -6,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
 
 const GuestBook = () => {
-  const [newComments, setNewComments] = useState<Comment[] | null>(null);
+  const [newComments, setNewComments] = useState();
 
   const fetchData = async () => {
     const comments = await fetchComments();
