@@ -16,7 +16,7 @@ type GuestCommentsProps = {
 const GuestComments = ({ comments = [], fetchComments }: GuestCommentsProps) => {
   const { data: session } = useSession(); 
   const currentUserId = session?.user?.id; 
-  const isAdmin = session?.user?.role === "admin";
+  const isAdmin = session?.user?.user_type === "admin";
 
   const handleDelete = async (id: number) => {
       await deleteComment(id);
