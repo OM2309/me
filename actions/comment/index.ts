@@ -42,6 +42,7 @@ export async function fetchComments() {
         userName: user.name,
         userImage: user.image,
         userType: user.userType,
+        userId: user.id,
       })
       .from(comment)
       .leftJoin(user, eq(comment.userId, user.id))
