@@ -57,7 +57,7 @@ export async function fetchComments() {
 
 export async function deleteComment(id: number) {
   try {
-    const deletedComment = await db.delete(comment).where(eq(comment.id, parseInt(id)));
+    const deletedComment = await db.delete(comment).where(eq(comment.id, id));
     revalidatePath("/");
     return { success: true, comment: deletedComment };
   } catch (error) {
