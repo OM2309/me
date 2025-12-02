@@ -3,15 +3,14 @@
 import { fetchComments } from "@/actions/comment";
 import GithubSignIn from "@/components/github-signin";
 import GuestComments from "@/components/guest-comment";
-import { Comment } from "@/types";
+import { Comment } from "@/types"; // Correct path to your type
 import { useEffect, useState } from "react";
 
 export default function GuestBook() {
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState<Comment[]>([]); // Explicitly type as Comment[]
 
   const loadComments = async () => {
     const data = await fetchComments();
-
     setComments(data?.comments ?? []);
   };
 
