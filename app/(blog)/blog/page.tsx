@@ -1,6 +1,9 @@
 import { Separator } from "@/components/ui/separator";
 
 const Blog = () => {
+   
+
+
   return (
     <>
       <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">

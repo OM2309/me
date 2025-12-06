@@ -36,7 +36,7 @@ const About = () => {
                 key={tech.name}
                 className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
               >
-                <div className="flex-shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
+                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
                   {tech.icon}
                 </div>
                 <div>
@@ -61,7 +61,7 @@ const About = () => {
                 key={tech.name}
                 className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
               >
-                <div className="flex-shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
+                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
                   {tech.icon}
                 </div>
                 <div>
@@ -86,7 +86,7 @@ const About = () => {
                 key={tech.name}
                 className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
               >
-                <div className="flex-shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
+                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
                   {tech.icon}
                 </div>
                 <div>
@@ -111,7 +111,7 @@ const About = () => {
                 key={tech.name}
                 className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
               >
-                <div className="flex-shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
+                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
                   {tech.icon}
                 </div>
                 <div>
@@ -142,7 +142,7 @@ const About = () => {
       <section className="space-y-6 pb-12">
         <h2 className="text-3xl font-bold">Outside of Code</h2>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          When I'm not coding, I enjoy exploring new tech, contributing to
+          When I&rsquo;m not coding, I enjoy exploring new tech, contributing to
           open-source, writing blogs, and helping junior developers grow. I
           believe in building tools that make development faster, cleaner, and
           more enjoyable.

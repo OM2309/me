@@ -3,7 +3,6 @@ import {
   SiReact,
   SiTypescript,
   SiSupabase,
-  SiExpo,
 } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { BiCoffee } from "react-icons/bi";
@@ -37,8 +36,6 @@ const About = () => {
           <FaNodeJs className="text-[#339933] w-5 h-5" /> Node.js
           <span className="text-zinc-500">•</span>
           <SiSupabase className="text-[#3ECF8E] w-5 h-5" /> Supabase
-          {/* <span className="text-zinc-500">•</span>
-          <SiExpo className="text-black dark:text-white w-5 h-5" /> Expo */}
         </strong>
       </p>
 

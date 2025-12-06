@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { DM_Sans,JetBrains_Mono } from "next/font/google";
+import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
-import Header from "@/components/header";
+import { Toaster } from "sonner";
 
 
 
@@ -43,7 +43,17 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-      
+          <Toaster
+            position="bottom-right"
+            richColors
+            closeButton
+            toastOptions={{
+              duration: 5000,
+              style: {
+                fontFamily: 'var(--font-dm-sans)',
+              },
+            }}
+          />
           {children}
           <Footer />
         </ThemeProvider>
