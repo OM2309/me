@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { createBlog } from '@/actions/blog';
-import TiptapEditor from '@/components/TiptapEditor';
+import TiptapEditor from '@/components/tip-tap-editor';
 import { toast } from 'sonner';
 import { redirect } from 'next/navigation';
 
