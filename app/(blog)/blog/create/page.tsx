@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { createBlog } from '@/actions/blog';
-import TiptapEditor from '@/components/tip-tap-editor';
+import TiptapEditor from '@/components/TiptapEditor';
 import { toast } from 'sonner';
 import { redirect } from 'next/navigation';
 
@@ -20,6 +20,7 @@ export default function CreateBlogPage() {
   const [isPending, startTransition] = useTransition();
 
   const {
+    register,
     handleSubmit,
     setValue,
     watch,
@@ -29,7 +30,7 @@ export default function CreateBlogPage() {
     defaultValues: { title: '', content: '' },
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = handleSubmit((data) => {
     startTransition(async () => {
       const formData = new FormData();
       formData.append('title', data.title);
@@ -44,16 +45,21 @@ export default function CreateBlogPage() {
         toast.error(result.error || 'Failed to publish blog');
       }
     });
+  });
+
+
+  const handleEditorSubmit = () => {
+    onSubmit(); 
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="min-h-screen">
+    <form onSubmit={onSubmit}>
       <TiptapEditor
         title={watch('title')}
         onTitleChange={(title) => setValue('title', title, { shouldValidate: true })}
         content={watch('content')}
         onContentChange={(html) => setValue('content', html, { shouldValidate: true })}
-        onSubmit={onSubmit}
+        onSubmit={handleEditorSubmit}   // Now type-safe
         isPending={isPending}
         errors={errors}
       />
