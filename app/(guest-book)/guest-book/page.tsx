@@ -7,7 +7,7 @@ import { Comment } from "@/types"; // Correct path to your type
 import { useEffect, useState } from "react";
 
 export default function GuestBook() {
-  const [comments, setComments] = useState<Comment[]>([]); // Explicitly type as Comment[]
+  const [comments, setComments] = useState<Comment[]>([]);
 
   const loadComments = async () => {
     const data = await fetchComments();
