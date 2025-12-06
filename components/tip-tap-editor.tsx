@@ -28,6 +28,8 @@ interface Props {
   errors: any;
 }
 
+
+
 export default function TiptapEditor({
   title = '',
   onTitleChange,
