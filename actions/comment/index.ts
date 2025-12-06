@@ -1,9 +1,8 @@
-// actions/comment.ts
 "use server";
 
 import { db } from "@/db";
 import { comment } from "@/db/schema/comment-schema";
-import { user } from "@/db/schema/auth-schema"; // ← YEH IMPORT GALAT THA PEHLE
+import { user } from "@/db/schema/auth-schema"; 
 import { eq, desc } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
@@ -42,6 +41,7 @@ export async function fetchComments() {
         userName: user.name,
         userImage: user.image,
         userType: user.userType,
+        userId: user.id,
       })
       .from(comment)
       .leftJoin(user, eq(comment.userId, user.id))

@@ -13,6 +13,7 @@ export const auth = betterAuth({
       verification,
     },
   }),
+
   socialProviders: {
     github: {
       clientId: process.env.GITHUB_CLIENT_ID as string,

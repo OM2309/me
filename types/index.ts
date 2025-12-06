@@ -28,4 +28,5 @@ export interface Comment {
   userName: string | null;
   userImage: string | null;
   userType: string | null;
+  userId: string | null
 };
