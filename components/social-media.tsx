@@ -1,11 +1,6 @@
 "use client";
 import { SocialMediaPlatform } from "@/types";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import Resume from "@/components/resume";
-import Contact from "./contact";
-import Appreciation from "./appereciation";
-import React from "react";
-
 import { socialIcons } from "@/data/icons/social-icons";
 
 const SocialMedia = () => {
@@ -42,14 +37,14 @@ const SocialMedia = () => {
 
   return (
     <>
-      <div className="flex justify-between max-w-lg items-center">
+      <div className="w-full">
         <div className="p-4 grid grid-cols-6 gap-4">
           {socialIcons.map((social) => (
             <Tooltip key={social.name}>
               <TooltipTrigger>
                 <button
                   onClick={() => handleNavigate(getPlatform(social.name))}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="cursor-pointer text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {social.icon}
                 </button>
@@ -59,14 +54,7 @@ const SocialMedia = () => {
               </TooltipContent>
             </Tooltip>
           ))}
-        </div>
-        <div>
-          <Appreciation />
-        </div>
-      </div>
-      <div className="flex items-center gap-4 mt-4">
-        <Resume />
-        <Contact />
+        </div>     
       </div>
     </>
   );

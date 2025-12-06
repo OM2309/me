@@ -43,7 +43,6 @@ const ContactForm = () => {
 
   const onSubmit = (data: FormData) => {
     console.log("Form submitted:", data);
-    // Handle form submission (e.g., send to API)
     alert("Message sent successfully!");
     form.reset();
   };
@@ -61,7 +60,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-1">
-                  Name <Asterisk className="h-3 w-3 text-white" />
+                  Name <Asterisk className="h-3 w-3 text-black dark:text-white" />
                 </FormLabel>
                 <FormControl>
                   <Input placeholder="John Doe" {...field} />
@@ -77,7 +76,7 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-1">
-                  Phone <Asterisk className="h-3 w-3 text-white" />
+                  Phone <Asterisk className="h-3 w-3 dark:text-white text-black" />
                 </FormLabel>
                 <FormControl>
                   <Input placeholder="+1234567890" {...field} />
@@ -94,7 +93,7 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="flex items-center gap-1">
-                Email <Asterisk className="h-3 w-3 text-white" />
+                Email <Asterisk className="h-3 w-3 dark:text-white text-black" />
               </FormLabel>
               <FormControl>
                 <Input
@@ -114,7 +113,7 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="flex items-center gap-1">
-                Message <Asterisk className="h-3 w-3 text-white" />
+                Message <Asterisk className="h-3 w-3 text-black dark:text-white" />
               </FormLabel>
               <FormControl>
                 <Textarea

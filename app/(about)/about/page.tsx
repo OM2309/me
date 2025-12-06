@@ -1,10 +1,11 @@
 import { webdev, tools, database, devops } from "@/data/icons/tech-stack";
 import GithubContribution from "@/components/github-contribution";
+import SocialMedia from "@/components/social-media";
 
 const About = () => {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 space-y-16">
-    
+
       <section className="space-y-6">
         <h1 className="text-3xl font-bold">About Me</h1>
         <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
@@ -129,6 +130,12 @@ const About = () => {
       <section className="mt-8 border-t pt-8">
         <h2 className="text-2xl font-semibold mb-4">GitHub Contributions</h2>
         <GithubContribution />
+      </section>
+
+      {/* Guestbook */}
+      <section className="mt-8 border-t pt-8">
+        <h2 className="text-2xl font-semibold mb-4">Connect</h2>
+        <SocialMedia />
       </section>
 
       {/* Outside of Code */}

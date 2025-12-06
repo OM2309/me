@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ModeToggle from "./mode-toggle";
+import { DropdownMenuHeader } from "@/components/dropdown-menu";
 
 
 const Header: React.FC = () => {
@@ -13,15 +14,16 @@ const Header: React.FC = () => {
         </p>
       </Link>
       <Link href="/blog">
-        <p className="  text-sm text-foreground/70 hover:text-foreground">
+        <p className="text-sm text-foreground/70 hover:text-foreground">
           Blog
         </p>
       </Link>
       <Link href="/guest-book">
-        <p className="  text-sm text-foreground/70 hover:text-foreground">
+        <p className="text-sm text-foreground/70 hover:text-foreground">
           Guestbook
         </p>
       </Link>
+      <DropdownMenuHeader />
       <ModeToggle />
     </div>
   );

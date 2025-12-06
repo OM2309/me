@@ -2,7 +2,7 @@
 
 import { db } from "@/db";
 import { comment } from "@/db/schema/comment-schema";
-import { user } from "@/db/schema/auth-schema"; 
+import { user } from "@/db/schema/auth-schema";
 import { eq, desc } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
@@ -23,7 +23,7 @@ export async function createComment(
       })
       .returning();
 
-    revalidatePath("/");
+    revalidatePath("/guestbook");
     return { success: true, comment: newComment };
   } catch (error) {
     console.error("Create comment error:", error);
@@ -47,7 +47,7 @@ export async function fetchComments() {
       .leftJoin(user, eq(comment.userId, user.id))
       .orderBy(desc(comment.createdAt))
       .limit(5);
-
+    
     return { success: true, comments };
   } catch (error) {
     console.error("Fetch comments error:", error);
@@ -58,7 +58,7 @@ export async function fetchComments() {
 export async function deleteComment(id: number) {
   try {
     const deletedComment = await db.delete(comment).where(eq(comment.id, id));
-    revalidatePath("/");
+    revalidatePath("/guestbook");
     return { success: true, comment: deletedComment };
   } catch (error) {
     console.error("Delete comment error:", error);

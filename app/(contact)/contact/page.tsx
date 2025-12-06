@@ -9,20 +9,11 @@ const Contact = () => {
           <p className="  text-4xl font-semibold text-black dark:text-white mb-4">
             Contact
           </p>
-          <p className="  text-md font-normal text-black dark:text-zinc-400">
+          <p className="text-md font-normal text-black dark:text-zinc-400">
             Get in touch with me. I will get back to you as soon as possible.
           </p>
         </div>
-        <Separator className="my-14 w-8" />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <p className="  text-sm font-normal text-black dark:text-white">
-          Send me a message
-        </p>
-        <p className="  text-sm font-normal ttext-black dark:text-zinc-400 leading-8">
-          Fill out the form below and I will get back to you as soon as
-          possible.
-        </p>
+        <Separator className="my-10 w-8" />
       </div>
       <div className="max-w-2xl mx-auto my-10">
         <ContactForm />

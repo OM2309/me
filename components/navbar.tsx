@@ -2,6 +2,7 @@
 import Link from "next/link";
 import ModeToggle from "./mode-toggle";
 import { Coffee } from "lucide-react";
+import { DropdownMenuHeader } from "./dropdown-menu";
 
 const Navbar: React.FC = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar: React.FC = () => {
       <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-4 gap-8 font-jetbrains-mono">
         {/* Logo */}
         <Link href="/" className="group">
-          <Coffee className="h-4 w-4 text-orange-500 transition-transform group-hover:rotate-12"  />
+          <Coffee className="h-4 w-4 text-orange-500 transition-transform group-hover:rotate-12" />
         </Link>
 
         {/* Navigation links + Mode toggle */}
@@ -23,6 +24,7 @@ const Navbar: React.FC = () => {
           <Link href="/guest-book" className="text-foreground/70 hover:text-foreground transition-colors">
             Guestbook
           </Link>
+          <DropdownMenuHeader />
           <ModeToggle />
         </nav>
       </div>
