@@ -7,7 +7,7 @@ import * as z from 'zod';
 import { createBlog } from '@/actions/blog';
 import TiptapEditor from '@/components/tip-tap-editor';
 import { toast } from 'sonner';
-import { redirect } from 'next/navigation';
+// import { redirect } from 'next/navigation';
 
 const formSchema = z.object({
   title: z.string().min(3, 'Title must be at least 3 characters'),
@@ -40,7 +40,7 @@ export default function CreateBlogPage() {
 
       if (result.success && result.blog?.slug) {
         toast.success('Blog published successfully!');
-        redirect(`/blog/${result.blog.slug}`);
+        // redirect(`/blog/${result.blog.slug}`);
       } else {
         toast.error(result.error || 'Failed to publish blog');
       }
