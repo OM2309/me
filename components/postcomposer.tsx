@@ -54,7 +54,7 @@ export default function PostComposer() {
   };
 
   return (
-    <div className="space-y-6 border border-zinc-800 rounded-xl p-6 bg-card">
+    <div className="">
       <div className="flex items-center justify-between text-sm">
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -64,18 +64,18 @@ export default function PostComposer() {
         </div>
         <button
           onClick={() => signOut()}
-          className="text-zinc-500 hover:text-zinc-300 transition"
+          className="text-zinc-500 hover:text-zinc-300 transition cursor-pointer"
         >
           Sign out
         </button>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="relative">
+        <div className="relative mt-4">
           <Textarea
             {...register("content")}
-            placeholder="Share your thoughts..."
-            className="min-h-32 resize-none pr-16 text-base"
+            placeholder="Share your thoughts..." 
+            className="min-h-32 resize-none pr-16 text-base hover:outline-none focus:outline-none focus:border-0 rounded-sm"
             onKeyDown={handleKeyDown}
             autoFocus
           />

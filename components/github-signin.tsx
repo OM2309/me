@@ -10,10 +10,10 @@ export default function GithubSignIn() {
   const { data: session } = useSession();
 
   const handleGitHubSignIn = () => {
-    signIn.social({ provider: "github" });
+    signIn.social({ provider: "github", callbackURL: window.location.href, });
   };
 
- 
+
 
   return (
     <div className="max-w-2xl mx-auto">

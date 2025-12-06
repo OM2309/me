@@ -5,8 +5,8 @@ export default function ContactLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>
+  return <div className="max-w-3xl mx-auto">
     <Navbar />
     {children}
-  </>;
+  </div>;
 }

@@ -4,8 +4,8 @@ import { Separator } from "@/components/ui/separator";
 const Contact = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
-        <div className="flex flex-col items-center justify-center w-full">
+      <div className="flex flex-col items-center justify-center mx-auto">
+        <div className="flex flex-col  justify-start w-full">
           <p className="  text-4xl font-semibold text-black dark:text-white mb-4">
             Contact
           </p>
@@ -15,7 +15,7 @@ const Contact = () => {
         </div>
         <Separator className="my-10 w-8" />
       </div>
-      <div className="max-w-2xl mx-auto my-10">
+      <div className=" mx-auto my-10">
         <ContactForm />
       </div>
     </>

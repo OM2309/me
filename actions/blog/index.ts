@@ -2,20 +2,11 @@
 
 import { db } from "@/db";
 import { blog } from "@/db/schema/blog-schema";
+import generateSlug from "@/utils/genrate-slug";
 import { eq, desc } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 
 
-// Helper: generate slug from title
-function generateSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
-}
-
-// === CREATE BLOG ===
 export async function createBlog(formData: FormData) {
   const title = formData.get("title") as string;
   const content = formData.get("content") as string;
@@ -30,7 +21,6 @@ export async function createBlog(formData: FormData) {
   try {
     const slug = generateSlug(title);
 
-    // Optional: check for duplicate slug
     const existing = await db
       .select()
       .from(blog)
@@ -58,7 +48,7 @@ export async function createBlog(formData: FormData) {
   }
 }
 
-// === UPDATE BLOG ===
+
 export async function updateBlog(id: number, formData: FormData) {
   const title = formData.get("title") as string;
   const content = formData.get("content") as string;
@@ -95,7 +85,7 @@ export async function updateBlog(id: number, formData: FormData) {
   }
 }
 
-// === DELETE BLOG ===
+
 export async function deleteBlog(id: number) {
   try {
     const deleted = await db
@@ -117,7 +107,7 @@ export async function deleteBlog(id: number) {
   }
 }
 
-// === FETCH ALL BLOGS (for listing) ===
+
 export async function fetchBlogs() {
   try {
     const blogs = await db
@@ -139,7 +129,7 @@ export async function fetchBlogs() {
   }
 }
 
-// === FETCH SINGLE BLOG BY SLUG (for reading page) ===
+
 export async function fetchBlogBySlug(slug: string) {
   try {
     const [post] = await db

@@ -9,10 +9,11 @@ export default function DeleteButton({ commentId, userId }: { commentId: number;
     const { data: session } = useSession();
     const [isPending, startTransition] = useTransition();
 
-    const isAdmin = session?.user?.email === process.env.Admin;
+    const isAdmin = session?.user?.email === process.env.NEXT_PUBLIC_ADMIN;
     const isOwner = session?.user?.id === userId;
     const canDelete = isAdmin || isOwner;
 
+    
     if (!canDelete) return null;
 
     const handleDelete = () => {

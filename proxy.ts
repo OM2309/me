@@ -20,7 +20,7 @@ export async function proxy(request: NextRequest) {
   });
 
   const userRole = session?.user?.email?.toLowerCase() || null;
-  const allowedRole = process.env.admin;
+  const allowedRole = process.env.NEXT_PUBLIC_ADMIN;
 
   if (!session || userRole !== allowedRole) {
     const url = request.nextUrl.clone();

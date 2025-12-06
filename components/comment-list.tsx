@@ -1,9 +1,12 @@
+"use client"
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Verified, Pin } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { Comment } from "@/types";
 import DeleteButton from "@/components/delete-button";
+import { useSession } from "@/lib/auth-client";
 
 type Props = {
   comments: Comment[];
@@ -17,6 +20,7 @@ function sortComments(comments: Comment[]) {
 }
 
 export default function CommentsList({ comments }: Props) {
+  const { data: session } = useSession();
   if (comments.length === 0) {
     return (
       <div className="text-center py-20 text-zinc-500">
@@ -26,7 +30,7 @@ export default function CommentsList({ comments }: Props) {
     );
   }
 
-  console.log(comments)
+
 
   return (
     <div className="space-y-8 py-8">
@@ -66,7 +70,7 @@ export default function CommentsList({ comments }: Props) {
                 · {formatDistanceToNow(new Date(comment.createdAt), { addSuffix: true })}
               </span>
 
-              <DeleteButton commentId={comment.id} userId={comment.userId ?? ""} />
+              {session && <DeleteButton commentId={comment.id} userId={comment.userId ?? ""} />}
             </div>
 
             <p className="dark:text-zinc-300 text-zinc-500 leading-relaxed whitespace-pre-wrap">

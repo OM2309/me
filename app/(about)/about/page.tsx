@@ -4,7 +4,7 @@ import SocialMedia from "@/components/social-media";
 
 const About = () => {
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12 space-y-16">
+    <div className="max-w-3xl mx-auto px-6 py-12 space-y-16">
 
       <section className="space-y-6">
         <h1 className="text-3xl font-bold">About Me</h1>

@@ -20,7 +20,7 @@ export default function CreateBlogPage() {
   const [isPending, startTransition] = useTransition();
 
   const {
-    register,
+ 
     handleSubmit,
     setValue,
     watch,

@@ -6,7 +6,7 @@ export default function AboutLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="max-w-3xl mx-auto">
       <Navbar />
       {children}
     </div>
