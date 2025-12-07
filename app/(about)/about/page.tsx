@@ -1,6 +1,7 @@
 import { webdev, tools, database, devops } from "@/data/icons/tech-stack";
 import GithubContribution from "@/components/github-contribution";
 import SocialMedia from "@/components/social-media";
+import { Suspense } from "react";
 
 const About = () => {
   return (
@@ -133,10 +134,12 @@ const About = () => {
       </section>
 
       {/* Guestbook */}
-      <section className="mt-8 border-t pt-8">
-        <h2 className="text-2xl font-semibold mb-4">Connect</h2>
-        <SocialMedia />
-      </section>
+      <Suspense fallback={<div>Loading...</div>}>
+        <section className="mt-8 border-t pt-8">
+          <h2 className="text-2xl font-semibold mb-4">Connect</h2>
+          <SocialMedia />
+        </section>
+      </Suspense>
 
       {/* Outside of Code */}
       <section className="space-y-6 pb-12">

@@ -8,6 +8,7 @@ export const projects: Project[] = [
     image: "/images/portfolio-image.jpg",
     technologies: ["Next.js", "shadcn/ui", "drizzle", "betterauth"],
     status: "building",
+    link:"https://anurag-uat.vercel.app/"
   },
   {
     name: "Personal CRM",
@@ -16,5 +17,6 @@ export const projects: Project[] = [
     image: "/images/image.png",
     technologies: ["React", "Node.js", "Express", "LinkedIn API"],
     status: "complete",
+      link:"https://anurag-uat.vercel.app/"
   },
 ];

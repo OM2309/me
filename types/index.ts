@@ -19,6 +19,7 @@ export interface Project {
   image: string;
   technologies: string[];
   status: "complete" | "building";
+  link: string;
 }
 
 export interface Comment {
@@ -30,3 +31,18 @@ export interface Comment {
   userType: string | null;
   userId: string | null
 };
+
+
+export interface Frontmatter {
+  title: string
+  description: string
+  date: string
+  image?: string
+  tags?: string[]
+  isPublished?: boolean
+}
+
+export interface Post  {
+  slug: string
+  frontmatter: Frontmatter
+}

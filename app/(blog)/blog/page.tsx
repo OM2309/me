@@ -1,21 +1,13 @@
-import { Separator } from "@/components/ui/separator";
+import BlogPost from "@/components/blog-post";
+import { Suspense } from "react";
+import Loading from "./loading";
 
-const Blog = () => {
-   
-
-
+export default function BlogPage() {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center max-w-2xl mx-auto">
-        <div className="flex flex-col items-center justify-center w-full">
-          <p className=" text-4xl font-semibold text-black dark:text-white">
-            Coming Soon
-          </p>
-        </div>
-        <Separator className="my-14 w-8" />
-      </div>
-    </>
-  );
-};
-
-export default Blog;
+    <div className="">
+      <Suspense fallback={<Loading />}>
+        <BlogPost />
+      </Suspense>
+    </div>
+  )
+}

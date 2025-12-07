@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section className="p-4 max-w-3xl">
       {/* Name — big and proud */}
-      <h1 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent leading-tight">
+      <h1 className="text-4xl sm:text-5xl font-bold bg-linear-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent leading-tight">
         Anurag Sharma
       </h1>
 

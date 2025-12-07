@@ -15,7 +15,7 @@ const ExperienceCard = ({
 }: ExperienceCardProps) => {
   return (
     <div className="flex items-start gap-4  ">
-      <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
+      <div className="shrink-0 w-12 h-12 rounded-full flex items-center justify-center overflow-hidden">
         <Image
           src={logo}
           alt={`${name} logo`}
