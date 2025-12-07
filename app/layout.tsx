@@ -4,6 +4,7 @@ import { DM_Sans, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
+import { Oneko } from "@/components/Oneko";
 
 
 
@@ -25,8 +26,35 @@ const jetbrainsMono = JetBrains_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Anurag - Portfolio",
-  description: "Personal portfolio showcasing projects and skills",
+  title: 'Anurag Sharma - Full Stack Developer',
+  description:
+    'Full Stack Developer from India specializing in React, Next.js, TypeScript, and Node.js. Find me on GitHub as anurag-sharma. Building scalable web applications with modern technologies.',
+  openGraph: {
+    title: 'Anurag Sharma - Full Stack Developer',
+    description:
+      'Full Stack Developer from India specializing in React, Next.js, TypeScript, and Node.js. Find me on GitHub as anurag-sharma. Building scalable web applications with modern technologies.',
+    url: 'https://anurag-uat.vercel.app',
+    siteName: 'Anurag Sharma Portfolio',
+    images: [
+      {
+        url: 'https://anurag-uat.vercel.app/og?title=Anurag%20Sharma%20-%20Full%20Stack%20Developer&description=Building%20scalable%20web%20applications%20with%20modern%20technologies',
+        width: 1200,
+        height: 630,
+        alt: 'Anurag Sharma Portfolio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anurag Sharma - Full Stack Developer',
+    description:
+      'Full Stack Developer from India specializing in React, Next.js, TypeScript, and Node.js. Find me on GitHub as anurag-sharma.',
+    images: [
+      'https://anurag-uat.vercel.app/og?title=Anurag%20Sharma%20-%20Full%20Stack%20Developer&description=Building%20scalable%20web%20applications%20with%20modern%20technologies',
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -54,6 +82,8 @@ export default function RootLayout({
               },
             }}
           />
+
+          <Oneko />
           {children}
           <Footer />
         </ThemeProvider>

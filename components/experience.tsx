@@ -20,7 +20,7 @@ const Experience = () => {
     },
     {
       name: "Kalazara Technologies",
-      role: "Software Engineering",
+      role: "Software Engineer",
       duration: "Jan 2024 - Feb 2025",
       logo: "/images/kalazara.jpg",
       current: false,
