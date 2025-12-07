@@ -4,8 +4,6 @@ import { Skeleton } from '@/components/ui/skeleton'
 export default function Loading() {
   return (
     <div className="max-w-4xl mx-auto py-12 px-5">
-      <Skeleton className="h-12 w-48 mx-auto mb-12 rounded-lg" />
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {[1, 2, 3, 4].map((i) => (
           <Card
