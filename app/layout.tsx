@@ -6,8 +6,6 @@ import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 import { Oneko } from "@/components/Oneko";
 
-
-
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
@@ -50,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Anurag Sharma - Full Stack Developer',
     description:
-      'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as [your-github-username].',
+      'Full Stack Developer from India specializing in React, Next.js, and TypeScript.',
     images: [
       'https://anurag-uat.vercel.app/og?title=Anurag%20Sharma%20-%20Full%20Stack%20Developer&description=Building%20scalable%20web%20applications%20with%20modern%20technologies',
     ],

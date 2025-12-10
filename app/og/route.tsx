@@ -1,5 +1,3 @@
-// app/og/route.tsx
-// prettier-ignore
 import { ImageResponse } from 'next/og';
 export const runtime = 'edge';
 

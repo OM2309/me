@@ -4,7 +4,7 @@ const profile = () => {
   return (
     <div>
       <Image
-        src="/images/download.jpg"
+        src="/images/dp.jpg"
         width={200}
         height={200}
         alt="profile"
