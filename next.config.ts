@@ -1,6 +1,5 @@
-// next.config.ts
 import type { NextConfig } from "next";
-import createMDX from '@next/mdx';
+import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
@@ -8,8 +7,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**', // Allows all external images (safe for blogs)
+        protocol: "https",
+        hostname: "**",
       },
     ],
   },

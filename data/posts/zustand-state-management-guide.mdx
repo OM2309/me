@@ -2,24 +2,26 @@
 
 export const frontmatter = {
   title: "Mastering State Management with Zustand: A Complete Guide",
-  description: "Learn how to use Zustand for simple and effective state management in your React applications with this comprehensive guide.",
-  image: "https://tkdodo.eu/blog/static/f18038b8566526e3d3dfcf7c3b807b2a/bbe0c/zustand-context.jpg",
+  description:
+    "Learn how to use Zustand for simple and effective state management in your React applications with this comprehensive guide.",
+  image:
+    "https://tkdodo.eu/blog/static/f18038b8566526e3d3dfcf7c3b807b2a/bbe0c/zustand-context.jpg",
   tags: ["react", "state-management", "zustand", "frontend"],
   date: "2025-12-10",
   isPublished: true,
-}
+};
 
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { CodeBlock } from '@/components/code-block'
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { CodeBlock } from "@/components/code-block";
 
 <span className="flex gap-2 flex-wrap mt-6">
-  {frontmatter.tags.map(tag => (
-    <Badge key={tag} variant="secondary">{tag}</Badge>
+  {frontmatter.tags.map((tag) => (
+    <Badge key={tag} variant="secondary">
+      {tag}
+    </Badge>
   ))}
 </span>
-
-
 
 Zustand is a small, fast, and scalable state management solution for React applications. It provides a simple API that makes state management a breeze without the need for complex setup or boilerplate code.
 
@@ -48,7 +50,7 @@ Let's create a simple counter store:
 
 ```typescript
 // stores/useCounterStore.ts
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface CounterState {
   count: number;
@@ -71,9 +73,9 @@ Now, let's use our counter store in a React component:
 
 ```tsx
 // components/Counter.tsx
-'use client';
+"use client";
 
-import { useCounterStore } from '@/stores/useCounterStore';
+import { useCounterStore } from "@/stores/useCounterStore";
 
 export function Counter() {
   const { count, increment, decrement, reset } = useCounterStore();
@@ -84,7 +86,9 @@ export function Counter() {
       <div className="flex gap-2">
         <Button onClick={decrement}>Decrement</Button>
         <Button onClick={increment}>Increment</Button>
-        <Button variant="outline" onClick={reset}>Reset</Button>
+        <Button variant="outline" onClick={reset}>
+          Reset
+        </Button>
       </div>
     </div>
   );
@@ -97,7 +101,7 @@ Zustand makes it easy to handle asynchronous operations:
 
 ```typescript
 // stores/usePostsStore.ts
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface Post {
   id: number;
@@ -119,11 +123,13 @@ export const usePostsStore = create<PostsState>((set) => ({
   fetchPosts: async () => {
     set({ loading: true, error: null });
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
       const data = await response.json();
       set({ posts: data, loading: false });
     } catch (error) {
-      set({ error: 'Failed to fetch posts', loading: false });
+      set({ error: "Failed to fetch posts", loading: false });
     }
   },
 }));
@@ -133,10 +139,10 @@ export const usePostsStore = create<PostsState>((set) => ({
 
 ```tsx
 // components/PostsList.tsx
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { usePostsStore } from '@/stores/usePostsStore';
+import { useEffect } from "react";
+import { usePostsStore } from "@/stores/usePostsStore";
 
 export function PostsList() {
   const { posts, loading, error, fetchPosts } = usePostsStore();
@@ -153,7 +159,10 @@ export function PostsList() {
       <h2 className="text-2xl font-bold mb-4">Latest Posts</h2>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {posts.slice(0, 6).map((post) => (
-          <div key={post.id} className="p-4 border rounded-lg hover:shadow-md transition-shadow">
+          <div
+            key={post.id}
+            className="p-4 border rounded-lg hover:shadow-md transition-shadow"
+          >
             <h3 className="font-semibold text-lg mb-2">{post.title}</h3>
             <p className="text-gray-600">{post.body.substring(0, 100)}...</p>
           </div>

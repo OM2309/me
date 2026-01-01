@@ -9,5 +9,5 @@ export default function BlogPage() {
         <BlogPost />
       </Suspense>
     </div>
-  )
+  );
 }
