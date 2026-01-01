@@ -5,15 +5,12 @@ import { signIn, useSession } from "@/lib/auth-client";
 import { Github } from "lucide-react";
 import PostComposer from "./postcomposer";
 
-
 export default function GithubSignIn() {
   const { data: session } = useSession();
 
   const handleGitHubSignIn = () => {
-    signIn.social({ provider: "github", callbackURL: window.location.href, });
+    signIn.social({ provider: "github", callbackURL: window.location.href });
   };
-
-
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -28,7 +25,7 @@ export default function GithubSignIn() {
           <Button
             size="lg"
             onClick={handleGitHubSignIn}
-            className="rounded-md px-8 shadow-lg"
+            className="rounded-md px-8 shadow-lg cursor-pointer"
           >
             <Github className="mr-2 h-5 w-5" />
             Continue with GitHub

@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import ContactForm from "@/components/contact-form";
 import Experience from "@/components/experience";
 import Header from "@/components/header";
 import Profile from "@/components/profile";
@@ -21,7 +22,13 @@ export default function Home() {
             <Experience />
             <Projects />
             <Technologies />
-            <Spotify />
+            {/* <Spotify /> */}
+            <div>
+              <p className="text-lg font-semibold text-black dark:text-white mb-8">
+                Get in touch
+              </p>
+            </div>
+            <ContactForm />
           </main>
         </div>
       </div>

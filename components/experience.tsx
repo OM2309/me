@@ -14,14 +14,14 @@ const Experience = () => {
         "Collaborating with cross-functional teams",
         "Developing and maintaining software systems",
         "Participating in code reviews and providing feedback",
-        "Contributing to the company's growth and success"
+        "Contributing to the company's growth and success",
       ],
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Git"],
     },
     {
       name: "Kalazara Technologies",
       role: "Software Engineer",
-      duration: "Jan 2024 - Feb 2025",
+      duration: "Jan 2023 - Feb 2025",
       logo: "/images/kalazara.jpg",
       current: false,
       address: "Gwalior, India (On-Site)",
@@ -30,11 +30,17 @@ const Experience = () => {
         "Collaborating with designers and QA engineers",
         "Optimizing code for performance and scalability",
         "Implementing new features and fixing bugs",
-        "Participating in agile development cycles"
+        "Participating in agile development cycles",
       ],
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Git", "Express.js"],
+      technologies: [
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Git",
+        "Express.js",
+      ],
     },
-  ]
+  ];
   return (
     <div className="space-y-6 mb-10">
       <h1 className="  text-lg font-semibold text-black dark:text-white">

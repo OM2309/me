@@ -7,9 +7,11 @@ export default function Resume() {
       size="lg"
       className="cursor-pointer"
       variant="outline"
-      onClick={() => window.open("/Anurag-2yr.pdf", "_blank")}
+      onClick={() =>
+        window.open("/Anurag_sharma_3yr_software_developer.pdf", "_blank")
+      }
     >
-      <Link className="w-5 h-5"/>
+      <Link className="w-5 h-5" />
       <span className="  font-semibold text-base leading-[1.6]">Resume</span>
     </Button>
   );
