@@ -14,11 +14,11 @@ import getPosts from '@/lib/get-posts'
 export default async function BlogPosts() {
   const posts = await getPosts()
   return (
-    <div className="max-w-3xl mx-auto py-12 px-5">
+    <div className="max-w-5xl mx-auto py-12 px-5">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {posts.map((post) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="group block">
-            <Card className="overflow-hidden border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl h-full flex flex-col">
+            <Card className="overflow-hidden border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl h-full flex flex-col w-96">
               {/* Image */}
               <div className="relative h-56 bg-muted -mt-10">
                 <Image
