@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const profile = () => {
+const Profile = () => {
   return (
     <div>
       <Image
@@ -14,4 +14,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profile;

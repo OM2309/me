@@ -1,5 +1,5 @@
 import React from "react";
-import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import { Tooltip, TooltipContent } from "./ui/tooltip";
 import { webdev, tools, database, devops } from "@/data/icons/tech-stack";
 
 const allSkills = [...webdev, ...database, ...tools, ...devops];
@@ -16,8 +16,8 @@ export default function Technologies() {
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4">
         {allSkills.map((skill) => (
           <Tooltip key={skill.name}>
-            <TooltipTrigger asChild>
-              <div className="group flex flex-col items-center justify-center gap-3 p-5 cursor-pointer">
+            {/* <TooltipTrigger asChild> */}
+              <div className="group flex flex-col items-center justify-center gap-3 p-5">
                 <div className="transition-transform group-hover:scale-110">
                   {skill.icon}
                 </div>
@@ -25,7 +25,7 @@ export default function Technologies() {
                   {skill.name}
                 </span>
               </div>
-            </TooltipTrigger>
+            {/* </TooltipTrigger> */}
             <TooltipContent>
               <p>{skill.name}</p>
             </TooltipContent>

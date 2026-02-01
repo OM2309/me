@@ -4,7 +4,6 @@ import Experience from "@/components/experience";
 import Header from "@/components/header";
 import Profile from "@/components/profile";
 import Projects from "@/components/projects";
-import Spotify from "@/components/spotify";
 import Technologies from "@/components/technologies";
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
             <Experience />
             <Projects />
             <Technologies />
-            {/* <Spotify /> */}
             <div>
               <p className="text-lg font-semibold text-black dark:text-white mb-8">
                 Get in touch
