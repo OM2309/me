@@ -6,7 +6,7 @@ import { DropdownMenuHeader } from "./dropdown-menu";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <div className="w-full max-w-5xl mx-auto">
       <div className="mx-auto flex items-center justify-between px-4 py-4 gap-8 font-jetbrains-mono">
         {/* Logo */}
         <Link href="/" className="group">

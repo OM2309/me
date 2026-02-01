@@ -1,11 +1,6 @@
 export const dynamic = "force-dynamic";
 
-import {
-  SiNextdotjs,
-  SiReact,
-  SiTypescript,
-  SiSupabase,
-} from "react-icons/si";
+import { SiNextdotjs, SiReact, SiTypescript, SiSupabase } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { getTotalProfileViews, saveProfileView } from "@/actions/profile-views";
 
@@ -30,7 +25,8 @@ export default async function About() {
 
       {/* Intro */}
       <p className="mt-8 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
-        I taught myself to code and now build full-stack and mobile apps that are{" "}
+        I taught myself to code and now build full-stack and mobile apps that
+        are{" "}
         <strong className="font-semibold text-black dark:text-white">
           fast, beautiful, and production-ready
         </strong>
@@ -38,7 +34,22 @@ export default async function About() {
       </p>
 
       {/* Stack */}
-      <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300"> Currently shipping with{" "} <strong className="inline-flex flex-wrap items-center gap-3 font-medium text-black dark:text-white"> <SiNextdotjs className="w-5 h-5" /> Next.js <span className="text-zinc-500">•</span> <SiReact className="text-[#61DAFB] w-5 h-5" /> React <span className="text-zinc-500">•</span> <SiTypescript className="text-[#3178C6] w-5 h-5" /> TypeScript <span className="text-zinc-500">•</span> <FaNodeJs className="text-[#339933] w-5 h-5" /> Node.js <span className="text-zinc-500">•</span> <SiSupabase className="text-[#3ECF8E] w-5 h-5" /> Supabase </strong> </p>
+      <p className="mt-6 text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
+        {" "}
+        Currently shipping with{" "}
+        <strong className="inline-flex flex-wrap items-center gap-3 font-medium text-black dark:text-white">
+          {" "}
+          <SiNextdotjs className="w-5 h-5" /> Next.js{" "}
+          <span className="text-zinc-500">•</span>{" "}
+          <SiReact className="text-[#61DAFB] w-5 h-5" /> React{" "}
+          <span className="text-zinc-500">•</span>{" "}
+          <SiTypescript className="text-[#3178C6] w-5 h-5" /> TypeScript{" "}
+          <span className="text-zinc-500">•</span>{" "}
+          <FaNodeJs className="text-[#339933] w-5 h-5" /> Node.js{" "}
+          <span className="text-zinc-500">•</span>{" "}
+          <SiSupabase className="text-[#3ECF8E] w-5 h-5" /> Supabase{" "}
+        </strong>{" "}
+      </p>
     </section>
   );
 }
