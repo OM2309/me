@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -19,7 +21,14 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <article className="prose prose-lg dark:prose-invert max-w-3xl mx-auto px-5 py-12">
+    <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto px-5 py-12">
+      <Link
+        href="/blog"
+        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 no-underline"
+      >
+        <ArrowLeft className="h-4 w-4" />
+        Back to blog
+      </Link>
       <h1 className="text-4xl font-bold mb-2">{frontmatter.title}</h1>
       <p className="text-muted-foreground mb-8">
         {new Date(frontmatter.date).toLocaleDateString('en-US', {

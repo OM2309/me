@@ -1,0 +1,203 @@
+---
+
+![Scalable File Uploads to AWS S3 with Pre-signed URLs](https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80)
+
+export const frontmatter = {
+  title: "How to Handle File Uploads at Scale – React + Node.js + AWS S3 (Pre-Signed URLs)",
+  description:
+    "Build a production-ready, scalable file upload system using React, Node.js/Express, and AWS S3 pre-signed URLs. Offload heavy uploads from your server and improve performance & cost.",
+  image:
+    "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80",
+  tags: ["react", "nodejs", "aws", "s3", "file-upload", "presigned-url", "scalability"],
+  date: "2026-02-21",
+  isPublished: true,
+};
+
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { CodeBlock } from "@/components/code-block";
+
+<span className="flex gap-2 flex-wrap mt-6">
+  {frontmatter.tags.map((tag) => (
+    <Badge key={tag} variant="secondary">
+      {tag}
+    </Badge>
+  ))}
+</span>
+
+Uploading files is common but tricky at scale. The naive approach (uploading through your server) quickly becomes expensive and slow.
+
+This guide shows you how to use **pre-signed URLs** — the same technique Instagram and Dropbox use — to let users upload directly to AWS S3 while keeping your server lightweight and secure.
+
+## The Problem
+
+**Traditional uploads:** Client → Server → S3
+
+- Your server pays for bandwidth (expensive!)
+- Server CPU/memory is consumed by large files
+- Single point of failure — server down = no uploads
+- Slower uploads (extra network hop)
+
+## The Solution
+
+**Pre-signed URLs:** Client → S3 (directly)
+
+1. Client asks your server for upload permission
+2. Server generates a temporary URL for S3
+3. Client uploads directly to S3
+4. Done!
+
+**Benefits:**
+- ✅ **60-80% cost savings** — no server bandwidth
+- ✅ **Faster uploads** — direct to S3
+- ✅ **Infinite scale** — S3 handles the load
+- ✅ **Secure** — URLs expire, scoped permissions
+
+## Quick Implementation
+
+### Backend (Node.js)
+
+```typescript
+import AWS from 'aws-sdk';
+import { v4 as uuidv4 } from 'uuid';
+
+const s3 = new AWS.S3({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: process.env.AWS_REGION,
+});
+
+// Generate upload URL
+app.post('/api/upload-url', async (req, res) => {
+  const { fileName, fileType } = req.body;
+  
+  const key = `uploads/${uuidv4()}-${fileName}`;
+  
+  const uploadUrl = await s3.getSignedUrlPromise('putObject', {
+    Bucket: process.env.AWS_S3_BUCKET,
+    Key: key,
+    Expires: 60, // URL expires in 60 seconds
+    ContentType: fileType,
+  });
+  
+  res.json({
+    uploadUrl,
+    publicUrl: `https://${process.env.AWS_S3_BUCKET}.s3.amazonaws.com/${key}`,
+  });
+});
+```
+
+### Frontend (React)
+
+```tsx
+import { useState } from 'react';
+
+export function FileUpload() {
+  const [progress, setProgress] = useState(0);
+
+  const uploadFile = async (file: File) => {
+    // 1. Get upload URL from server
+    const { uploadUrl, publicUrl } = await fetch('/api/upload-url', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fileName: file.name,
+        fileType: file.type,
+      }),
+    }).then(r => r.json());
+
+    // 2. Upload directly to S3 with progress
+    const xhr = new XMLHttpRequest();
+    
+    xhr.upload.addEventListener('progress', (e) => {
+      setProgress((e.loaded / e.total) * 100);
+    });
+
+    xhr.open('PUT', uploadUrl, true);
+    xhr.setRequestHeader('Content-Type', file.type);
+    await new Promise((resolve, reject) => {
+      xhr.onload = () => xhr.status === 200 ? resolve(publicUrl) : reject();
+      xhr.onerror = reject;
+      xhr.send(file);
+    });
+
+    return publicUrl; // File is now live!
+  };
+
+  return (
+    <input
+      type="file"
+      onChange={(e) => e.target.files?.[0] && uploadFile(e.target.files[0])}
+    />
+  );
+}
+```
+
+## Key Points
+
+**Server does:**
+- Generate temporary, scoped URLs
+- Validate file types and sizes
+- Authenticate users
+
+**Client does:**
+- Upload directly to S3
+- Handle progress/retries
+- Show UI feedback
+
+**S3 does:**
+- Store the files
+- Serve them via CDN
+- Handle massive scale
+
+## Security Checklist
+
+- [ ] Validate file types on server
+- [ ] Limit file sizes (e.g., 100MB max)
+- [ ] Use short expiry times (30-60 seconds)
+- [ ] Add rate limiting per user
+- [ ] Store files in private buckets if needed
+
+## Common Issues
+
+**CORS errors?** Configure your S3 bucket:
+```json
+{
+  "CORSRules": [{
+    "AllowedHeaders": ["*"],
+    "AllowedMethods": ["PUT"],
+    "AllowedOrigins": ["https://yourdomain.com"]
+  }]
+}
+```
+
+**Uploads failing?** Check:
+- Content-Type header matches what was requested
+- URL hasn't expired
+- File size within limits
+
+## Cost Comparison
+
+| Approach | Server Cost | Upload Speed | Scale |
+|----------|-------------|--------------|-------|
+| Through Server | High | Slower | Limited |
+| Pre-signed URLs | Low | Faster | Unlimited |
+
+**Typical savings: 60-80% on bandwidth costs.**
+
+## That's It!
+
+Three simple steps to production-ready file uploads:
+
+1. Server generates URL
+2. Client uploads to S3
+3. Get the public URL
+
+This pattern scales from 1 user to 1 million without changing your architecture.
+
+**Next steps:**
+- Add image resizing with AWS Lambda
+- Use CloudFront CDN for faster downloads
+- Implement multipart uploads for large files
+
+Happy coding! 🚀

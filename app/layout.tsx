@@ -26,11 +26,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'Anurag Sharma - Full Stack Developer',
   description:
-    'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as [your-github-username]. Building scalable web applications with modern technologies.',
+    'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as om2309. Building scalable web applications with modern technologies.',
   openGraph: {
     title: 'Anurag Sharma - Full Stack Developer',
     description:
-      'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as [your-github-username]. Building scalable web applications with modern technologies.',
+      'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as om2309. Building scalable web applications with modern technologies.',
     url: 'https://anurag-uat.vercel.app',
     siteName: 'Anurag Sharma Portfolio',
     images: [

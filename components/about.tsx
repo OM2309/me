@@ -5,10 +5,8 @@ import { FaNodeJs } from "react-icons/fa";
 import { getTotalProfileViews, saveProfileView } from "@/actions/profile-views";
 
 export default async function About() {
-  // Increment view first
-  await saveProfileView();
 
-  // Then fetch total
+  await saveProfileView();
   const views = await getTotalProfileViews();
 
   return (

@@ -2,13 +2,16 @@
 
 import { Button } from "@/components/ui/button";
 import { signIn, useSession } from "@/lib/auth-client";
-import { Github } from "lucide-react";
+import { Github, Loader2 } from "lucide-react";
 import PostComposer from "./postcomposer";
+import { useState } from "react";
 
 export default function GithubSignIn() {
   const { data: session } = useSession();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleGitHubSignIn = () => {
+    setIsLoading(true);
     signIn.social({ provider: "github", callbackURL: window.location.href });
   };
 
@@ -25,10 +28,15 @@ export default function GithubSignIn() {
           <Button
             size="lg"
             onClick={handleGitHubSignIn}
-            className="rounded-md px-8 shadow-lg cursor-pointer"
+            disabled={isLoading}
+            className="rounded-md px-8 shadow-lg cursor-pointer transition-all duration-300 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            <Github className="mr-2 h-5 w-5" />
-            Continue with GitHub
+            {isLoading ? (
+              <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+            ) : (
+              <Github className="mr-2 h-5 w-5 transition-transform duration-300 group-hover:rotate-12" />
+            )}
+            {isLoading ? "Redirecting..." : "Continue with GitHub"}
           </Button>
         </div>
       )}

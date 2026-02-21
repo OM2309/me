@@ -7,9 +7,6 @@ export const saveProfileView = async () => {
   await db.insert(profileViews).values({});
 };
 
-
-
-
 export const getTotalProfileViews = async () => {
   const [{ count }] = await db
     .select({ count: sql<number>`count(*)` })
