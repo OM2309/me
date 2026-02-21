@@ -1,4 +1,6 @@
 import CopyButton from "@/components/copy-button";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export function CodeBlock({
   children,
@@ -9,9 +11,19 @@ export function CodeBlock({
 }) {
   return (
     <div className="relative group">
-      <pre className="bg-muted/50 border border-border rounded-xl overflow-x-auto py-4 px-6 text-sm font-mono leading-relaxed">
-        <code className={`language-${language || "text"}`}>{children}</code>
-      </pre>
+      <SyntaxHighlighter
+        language={language || "text"}
+        style={vscDarkPlus}
+        customStyle={{
+          margin: 0,
+          borderRadius: "0.75rem",
+          padding: "1rem 1.5rem",
+          fontSize: "0.875rem",
+          lineHeight: "1.625",
+        }}
+      >
+        {children}
+      </SyntaxHighlighter>
 
       <CopyButton
         text={children}
