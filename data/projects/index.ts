@@ -11,12 +11,12 @@ export const projects: Project[] = [
     link: "https://anurag-uat.vercel.app/",
   },
   {
-    name: "Personal CRM",
+    name: "Sunlake Card",
     description:
-      "A smart personal CRM that pulls LinkedIn profiles instantly, auto-extracts contact info, tracks follow-ups, sends personalized messages.",
-    image: "/images/image.png",
-    technologies: ["React", "Node.js", "Express", "LinkedIn API"],
+      "A production-grade digital card platform built with Next.js and Node.js, featuring a React-based admin panel, BullMQ-powered background job processing, Redis-backed email queuing, secure authentication, and scalable REST APIs.",
+    image: "/images/sunlake.png",
+    technologies: ["Next.js", "React", "Node.js", "Redis", "BullMQ"],
     status: "complete",
-    link: "https://app.hellomanifest.co/",
+    link: "http://sunlakecards.com/",
   },
 ];

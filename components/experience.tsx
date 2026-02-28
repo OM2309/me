@@ -17,29 +17,7 @@ const Experience = () => {
         "Contributing to the company's growth and success",
       ],
       technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Git"],
-    },
-    {
-      name: "Kalazara Technologies",
-      role: "Software Engineer",
-      duration: "Jan 2023 - Feb 2025",
-      logo: "/images/kalazara.jpg",
-      current: false,
-      address: "Gwalior, India (On-Site)",
-      responsibilities: [
-        "Developing and enhancing web applications",
-        "Collaborating with designers and QA engineers",
-        "Optimizing code for performance and scalability",
-        "Implementing new features and fixing bugs",
-        "Participating in agile development cycles",
-      ],
-      technologies: [
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Git",
-        "Express.js",
-      ],
-    },
+    }
   ];
   return (
     <div className="space-y-6 mb-10">
