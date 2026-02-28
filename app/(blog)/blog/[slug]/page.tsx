@@ -29,9 +29,9 @@ export default async function PostPage({ params }: Props) {
         <ArrowLeft className="h-4 w-4" />
         Back to blog
       </Link>
-      <h1 className="text-4xl font-bold mb-2">{frontmatter.title}</h1>
+      <h1 className="text-4xl font-bold mb-2">{frontmatter?.title}</h1>
       <p className="text-muted-foreground mb-8">
-        {new Date(frontmatter.date).toLocaleDateString('en-US', {
+        {new Date(frontmatter?.date).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'long',
           day: 'numeric',

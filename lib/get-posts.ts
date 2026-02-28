@@ -27,12 +27,12 @@ export default async function getPosts(): Promise<Post[]> {
         return {
           slug,
           frontmatter: {
-            title: frontmatter.title || 'Untitled',
-            description: frontmatter.description || 'No description',
-            date: frontmatter.date || '2025-01-01',
-            image: frontmatter.image,
-            tags: frontmatter.tags || [],
-            isPublished: frontmatter.isPublished !== false,
+            title: frontmatter?.title || 'Untitled',
+            description: frontmatter?.description || 'No description',
+            date: frontmatter?.date || '2025-01-01',
+            image: frontmatter?.image,
+            tags: frontmatter?.tags || [],
+            isPublished: frontmatter?.isPublished !== false,
           },
         }
       })
@@ -40,5 +40,5 @@ export default async function getPosts(): Promise<Post[]> {
 
   return posts
     .filter((post) => post.frontmatter.isPublished)
-    .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+    .sort((a, b) => new Date(b.frontmatter?.date).getTime() - new Date(a.frontmatter?.date).getTime())
 }

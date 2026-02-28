@@ -22,8 +22,8 @@ export default async function BlogPosts() {
               {/* Image */}
               <div className="relative h-56 bg-muted -mt-10">
                 <Image
-                  src={post.frontmatter.image || '/placeholder.png'}
-                  alt={post.frontmatter.title}
+                  src={post.frontmatter?.image || '/placeholder.png'}
+                  alt={post.frontmatter?.title}
                   fill
                   className="object-cover transition-transform group-hover:scale-105 duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -35,16 +35,16 @@ export default async function BlogPosts() {
               <div className="flex-1 flex flex-col">
                 <CardHeader className="pt-6">
                   <CardTitle className="text-xl line-clamp-2 group-hover:text-primary transition-colors">
-                    {post.frontmatter.title}
+                    {post?.frontmatter?.title}
                   </CardTitle>
                   <CardDescription className="line-clamp-2 mt-2">
-                    {post.frontmatter.description}
+                    {post?.frontmatter?.description}
                   </CardDescription>
                 </CardHeader>
 
                 <CardFooter className="mt-10 text-sm text-muted-foreground justify-between">
                   <time>
-                    {new Date(post.frontmatter.date).toLocaleDateString('en-US', {
+                    {new Date(post?.frontmatter?.date).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric',
