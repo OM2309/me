@@ -13,7 +13,7 @@ export default function Home() {
       <div className="bg-background text-foreground">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 px-6 mx-auto">
           <aside className="lg:col-span-6 space-y-8 lg:sticky lg:top-10 lg:h-fit">
-            {/* <Profile /> */}
+            <Profile />
             <About />
           </aside>
 
