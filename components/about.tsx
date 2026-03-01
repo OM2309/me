@@ -2,10 +2,10 @@ export const dynamic = "force-dynamic";
 
 import { SiNextdotjs, SiReact, SiTypescript, SiSupabase } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
+import { Signature } from "@/components/AnuragSignature";
 import { getTotalProfileViews, saveProfileView } from "@/actions/profile-views";
 
 export default async function About() {
-
   await saveProfileView();
   const views = await getTotalProfileViews();
 
@@ -15,6 +15,8 @@ export default async function About() {
       <h1 className="text-4xl sm:text-5xl font-bold bg-linear-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent leading-tight">
         Anurag Sharma
       </h1>
+
+      {/* <Signature /> */}
 
       {/* Views */}
       <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400 tracking-wide">
