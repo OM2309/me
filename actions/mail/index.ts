@@ -36,7 +36,6 @@ export async function sendContactEmail(data: {
                     </div>
                 `,
         });
-
         return { success: true };
     } catch (error) {
         console.error("Resend error:", error);
