@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
@@ -21,6 +21,15 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
   preload: true,
   fallback: ['monospace'],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-instrument-serif',
+  display: 'swap',
+  preload: true,
+  fallback: ['Georgia', 'serif'],
 });
 
 
@@ -63,12 +72,12 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${jetbrainsMono.variable} ${dmSans.variable} antialiased`}>
+      <html lang="en" className="dark" suppressHydrationWarning>
+        <body className={`${jetbrainsMono.variable} ${dmSans.variable} ${instrumentSerif.variable} antialiased`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
-            enableSystem
+            forcedTheme="dark"
+            enableSystem={false}
             disableTransitionOnChange
           >
             <Toaster

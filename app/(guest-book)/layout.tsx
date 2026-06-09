@@ -1,10 +1,9 @@
 import Navbar from "@/components/navbar";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Guestbook - Anurag Sharma",
-  description: "A place to leave your thoughts and messages.",
+  description: "Leave a note, feedback, or just say hi.",
 };
 
 export default function GuestBookLayout({
@@ -13,9 +12,9 @@ export default function GuestBookLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-3xl mx-auto px-6 pb-20">
+    <div className="min-h-dvh bg-background text-foreground">
       <Navbar />
-      {children}
+      <div className="max-w-3xl mx-auto px-6 pb-24 pt-2">{children}</div>
     </div>
   );
 }

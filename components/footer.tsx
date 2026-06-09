@@ -1,83 +1,79 @@
 import { Link } from "next-view-transitions";
-import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const socials = [
+  {
+    href: "https://github.com/OM2309",
+    label: "GitHub",
+    icon: FaGithub,
+  },
+  {
+    href: "mailto:23anuragsharma@gmail.com",
+    label: "Email",
+    icon: FaEnvelope,
+  },
+  {
+    href: "https://x.com/_whyom",
+    label: "X",
+    icon: FaXTwitter,
+  },
+  {
+    href: "https://www.linkedin.com/in/anuragxcodes/",
+    label: "LinkedIn",
+    icon: FaLinkedin,
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-zinc-800/80 relative overflow-hidden max-w-3xl mx-auto">
-      {/* Background Image with Gradient Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/footer-bg-dark.webp')",
-        }}
-      />
-      
-      {/* Gradient Overlays for Better Text Visibility and Color */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5" />
-
-      {/* Content */}
-      <div className="relative px-6 py-20">
-        <div className="flex flex-col items-center justify-center gap-8 text-center">
-          {/* Main Message */}
-          <div className="space-y-3">
-            <p className="text-sm sm:text-base text-zinc-300 font-light tracking-wide">
-              Built by{" "}
+    <footer className="w-full border-t border-[var(--color-border-subtle)] mt-8">
+      <div className="max-w-3xl mx-auto px-6 py-10">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div className="space-y-1.5">
+            <p className="font-serif text-[15px] text-foreground">
+              Anurag Sharma
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
+              Built with Next.js.{" "}
               <a
-                href="https://github.com/om2309"
+                href="https://github.com/OM2309/me"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-foreground/80 hover:text-foreground underline-offset-4 hover:underline transition-colors"
               >
-                OM
+                View source
               </a>
-              . The source code is available on{" "}
-              <a
-                href="https://github.com/om2309"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                GitHub
-              </a>
-              .
             </p>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-6">
-            <a
-              href="https://twitter.com/om2309"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-blue-400 transition-colors duration-200"
-              title="Twitter"
+          <div className="flex items-center gap-4">
+            {socials.map(({ href, label, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target={href.startsWith("mailto") ? undefined : "_blank"}
+                rel={
+                  href.startsWith("mailto") ? undefined : "noopener noreferrer"
+                }
+                aria-label={label}
+                className="text-muted-foreground hover:text-foreground transition-colors p-1"
+              >
+                <Icon className="h-4 w-4" />
+              </a>
+            ))}
+            <Link
+              href="/"
+              className="text-sm font-mono text-muted-foreground hover:text-foreground transition-colors ml-1"
             >
-              <FaTwitter className="h-5 w-5" />
-            </a>
-            <a
-              href="mailto:23anuragsharma@gmail.com"
-              className="text-zinc-400 hover:text-amber-400 transition-colors duration-200"
-              title="Email"
-            >
-              <FaEnvelope className="h-5 w-5" />
-            </a>
-            <a
-              href="https://github.com/om2309"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-purple-400 transition-colors duration-200"
-              title="GitHub"
-            >
-              <FaGithub className="h-5 w-5" />
-            </a>
-          </div>
-
-          {/* Copyright */}
-          <div className="text-xs text-zinc-500 font-mono pt-4 border-t border-zinc-700/50">
-            © 2026 Anurag Sharma · All rights reserved
+              ↑ Home
+            </Link>
           </div>
         </div>
+
+        <p className="mt-8 pt-6 border-t border-[var(--color-border-subtle)] text-xs font-mono text-muted-foreground/70">
+          © {new Date().getFullYear()} Anurag Sharma
+        </p>
       </div>
     </footer>
   );

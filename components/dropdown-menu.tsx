@@ -9,7 +9,6 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Link } from "next-view-transitions";
 
 export function DropdownMenuHeader() {
   const [open, setOpen] = useState(false);
@@ -46,11 +45,6 @@ export function DropdownMenuHeader() {
           </a>
         </DropdownMenuLabel>
 
-        <Link href="/contact" className="block">
-          <DropdownMenuLabel className="cursor-pointer text-sm text-foreground/70 hover:text-foreground">
-            Contact
-          </DropdownMenuLabel>
-        </Link>
       </DropdownMenuContent>
     </DropdownMenu>
   );

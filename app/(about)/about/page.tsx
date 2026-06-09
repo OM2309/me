@@ -1,150 +1,68 @@
 import { webdev, tools, database, devops } from "@/data/icons/tech-stack";
 import GithubContribution from "@/components/github-contribution";
-import SocialMedia from "@/components/social-media";
-import { Suspense } from "react";
+import PageHeader from "@/components/page-header";
+import SectionHeading from "@/components/ui/section-heading";
 
-const About = () => {
+const techGroups = [
+  { title: "Web Development", items: webdev },
+  { title: "Tools & Platforms", items: tools },
+  { title: "Database & Storage", items: database },
+  { title: "DevOps & Cloud", items: devops },
+];
+
+export default function About() {
   return (
-    <div className="w-full py-12 space-y-12">
-      <section className="space-y-6">
-        <h1 className="text-3xl font-bold">About Me</h1>
-        <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
-          <p>
-            I am a Full Stack Developer passionate about building scalable,
-            performant, and beautiful web applications — from pixel-perfect UIs
-            to robust backend systems.
-          </p>
-          <p>
-            I love clean code, modern tools, and shipping fast. Always learning,
-            always improving.
-          </p>
-        </div>
-      </section>
+    <div className="space-y-14">
+      <PageHeader
+        title="About"
+        description="Full-stack developer building scalable, performant, and beautiful web applications — from pixel-perfect UIs to robust backend systems."
+      />
 
-      {/* Technologies & Tools */}
-      <section className="space-y-12">
-        <h2 className="text-3xl font-bold">Technologies & Tools</h2>
-
-        {/* Web Development */}
-        <div>
-          <h3 className="text-xl font-semibold text-primary mb-5">
-            Web Development
-          </h3>
-          <div className="grid gap-4 grid-cols-2">
-            {webdev.map((tech) => (
-              <div
-                key={tech.name}
-                className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
-              >
-                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {tech.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">{tech.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {tech.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tools & Platforms */}
-        <div>
-          <h3 className="text-xl font-semibold text-primary mb-5 mt-10">
-            Tools & Platforms
-          </h3>
-          <div className="grid gap-4 grid-cols-2">
-            {tools.map((tech) => (
-              <div
-                key={tech.name}
-                className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
-              >
-                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {tech.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">{tech.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {tech.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Database */}
-        <div>
-          <h3 className="text-xl font-semibold text-primary mb-5 mt-10">
-            Database & Storage
-          </h3>
-          <div className="grid gap-4 grid-cols-2">
-            {database.map((tech) => (
-              <div
-                key={tech.name}
-                className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
-              >
-                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {tech.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">{tech.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {tech.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* DevOps */}
-        <div>
-          <h3 className="text-xl font-semibold text-primary mb-5 mt-10">
-            DevOps & Cloud
-          </h3>
-          <div className="grid gap-4 grid-cols-2">
-            {devops.map((tech) => (
-              <div
-                key={tech.name}
-                className="flex items-center gap-5 p-5 rounded-xl bg-card border border-border hover:bg-accent/50 hover:border-primary/30 transition-all duration-300 cursor-default group"
-              >
-                <div className="shrink-0 text-4xl group-hover:scale-110 transition-transform duration-300">
-                  {tech.icon}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">{tech.name}</h4>
-                  <p className="text-sm text-muted-foreground">
-                    {tech.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GitHub Contributions */}
-      <section className="mt-8 border-t pt-8">
-        <h2 className="text-2xl font-semibold mb-4">GitHub Contributions</h2>
-        <GithubContribution />
-      </section>
-
-
-      {/* Outside of Code */}
-      <section className="space-y-6 pb-12">
-        <h2 className="text-3xl font-bold">Outside of Code</h2>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          When I&rsquo;m not coding, I enjoy exploring new tech, contributing to
-          open-source, writing blogs, and helping junior developers grow. I
-          believe in building tools that make development faster, cleaner, and
-          more enjoyable.
+      <section className="space-y-3">
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          I love clean code, modern tools, and shipping fast. When I&apos;m not
+          coding, I explore new tech, contribute to open-source, and help junior
+          developers grow.
         </p>
+      </section>
+
+      <section className="space-y-8">
+        <SectionHeading>Stack & Tools</SectionHeading>
+        {techGroups.map((group) => (
+          <div key={group.title} className="space-y-3">
+            <h3 className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
+              {group.title}
+            </h3>
+            <div className="grid gap-2 sm:grid-cols-2">
+              {group.items.map((tech) => (
+                <div
+                  key={tech.name}
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)]/40 hover:bg-[var(--color-tag-bg)] transition-colors"
+                >
+                  <div className="shrink-0 [&_svg]:!w-5 [&_svg]:!h-5">
+                    {tech.icon}
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-foreground truncate">
+                      {tech.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {tech.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      <section className="space-y-4">
+        <SectionHeading>Contributions</SectionHeading>
+        <div className="rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)]/30 p-4 overflow-x-auto hide-scrollbar">
+          <GithubContribution />
+        </div>
       </section>
     </div>
   );
-};
-
-export default About;
+}

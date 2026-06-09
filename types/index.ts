@@ -24,7 +24,7 @@ export interface Project {
   description: string;
   image: string;
   technologies: string[];
-  status: "complete" | "building";
+  status: "complete" | "building" | "coming-soon";
   link: string;
 }
 

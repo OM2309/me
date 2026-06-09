@@ -1,8 +1,7 @@
-import React from "react";
 import { Link } from "next-view-transitions";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
+import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "404 - Page Not Found",
@@ -23,27 +22,42 @@ export default function NotFound() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(errorSchema) }}
       />
-      <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-4 font-jetbrains-mono max-w-md mx-auto py-12">
-        {/* 404 Image Frame */}
-        <div className="relative w-64 h-64 sm:w-72 sm:h-72 mb-8 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800/80 shadow-[0_8px_30px_rgb(0,0,0,0.08)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] bg-zinc-100 dark:bg-zinc-900">
-          <Image
-            src="/images/404.webp"
-            alt="404 - Page Not Found"
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 640px) 256px, 288px"
-          />
-        </div>
 
-        <h1 className="text-3xl font-bold mb-3 text-black dark:text-white">404</h1>
-        <h2 className="text-xl font-semibold mb-3 text-zinc-800 dark:text-zinc-200">Page Not Found</h2>
-        <p className="text-muted-foreground text-sm mb-8">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
-        </p>
-        <Button asChild className="cursor-pointer">
-          <Link href="/">Return Home</Link>
-        </Button>
+      <div className="fixed inset-0 z-50 flex min-h-dvh items-end justify-center overflow-hidden bg-black">
+        <Image
+          src="/images/404.webp"
+          alt="404 — Page not found"
+          fill
+          priority
+          className="object-cover object-center opacity-40 saturate-50"
+          sizes="100vw"
+        />
+
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/90" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,0.55)_100%)]" />
+
+        <div className="relative z-10 flex flex-col items-center px-6 pb-12 sm:pb-16 text-center">
+          <p className="font-serif text-5xl sm:text-6xl text-foreground/90 mb-2 tracking-tight">
+            404
+          </p>
+          <p className="text-[11px] uppercase tracking-[0.35em] text-muted-foreground mb-3">
+            Page not found
+          </p>
+          <p className="text-sm text-muted-foreground/80 mb-8 max-w-xs">
+            This path doesn&apos;t exist or has been moved.
+          </p>
+
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2 rounded-full border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)] px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-foreground/20 hover:bg-[var(--color-button-bg)]"
+          >
+            <ArrowLeft
+              className="h-4 w-4 transition-transform group-hover:-translate-x-0.5"
+              aria-hidden="true"
+            />
+            Return home
+          </Link>
+        </div>
       </div>
     </>
   );

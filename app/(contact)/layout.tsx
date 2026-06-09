@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact - Anurag Sharma",
-  description: "A page where you can reach out to me.",
+  description: "Get in touch — I'll get back to you as soon as possible.",
 };
 
 export default function ContactLayout({
@@ -12,9 +12,9 @@ export default function ContactLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-3xl mx-auto px-6 pb-20">
+    <div className="min-h-dvh bg-background text-foreground">
       <Navbar />
-      {children}
+      <div className="max-w-3xl mx-auto px-6 pb-24 pt-2">{children}</div>
     </div>
   );
 }

@@ -6,18 +6,9 @@ import BlurFade from "@/components/ui/blur-fade";
 
 export default function Projects() {
   return (
-    <div className="space-y-6 mb-10">
-      {/* Section Header */}
-      <div className="flex items-center justify-between">
-        <h2 className="text-lg font-semibold text-black dark:text-white">
-          Projects
-        </h2>
-      </div>
-
-      {/* Grid Container - 4 Projects Layout (2x2) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {projects.map((p: Project, idx) => (
-          <BlurFade key={p.name} delay={0.05 * idx} duration={0.45}>
+          <BlurFade key={p.name} delay={0.06 * idx} duration={0.55} yOffset={10} blur="4px">
             <a
               href={p.link}
               target="_blank"
@@ -96,7 +87,6 @@ export default function Projects() {
             </a>
           </BlurFade>
         ))}
-      </div>
     </div>
   );
 }

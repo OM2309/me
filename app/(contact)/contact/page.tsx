@@ -1,25 +1,22 @@
 import ContactForm from "@/components/contact-form";
-import { Separator } from "@/components/ui/separator";
+import ContactLinks from "@/components/contact-links";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <>
-      <div className="flex flex-col items-center justify-center mx-auto">
-        <div className="flex flex-col  justify-start w-full">
-          <p className="  text-4xl font-semibold text-black dark:text-white mb-4">
-            Contact
-          </p>
-          <p className="text-md font-normal text-black dark:text-zinc-400">
-            Get in touch with me. I will get back to you as soon as possible.
-          </p>
-        </div>
-        <Separator className="my-10 w-8" />
-      </div>
-      <div className=" mx-auto my-10">
+    <div className="space-y-8">
+      <header className="space-y-2">
+        <p className="text-[11px] uppercase tracking-[0.3em] text-muted-foreground font-mono">
+          Let&apos;s work together
+        </p>
+        <h1 className="font-serif text-2xl sm:text-3xl text-foreground tracking-tight">
+          Contact
+        </h1>
+      </header>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 items-stretch">
+        <ContactLinks />
         <ContactForm />
       </div>
-    </>
+    </div>
   );
-};
-
-export default Contact;
+}

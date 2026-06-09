@@ -21,20 +21,22 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <article className="prose dark:prose-invert w-full py-12">
+    <article className="prose dark:prose-invert prose-headings:font-serif prose-headings:font-normal prose-a:text-foreground w-full max-w-none py-4">
       <Link
         href="/blog"
-        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 no-underline"
+        className="inline-flex items-center gap-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors mb-8 no-underline not-prose"
       >
-        <ArrowLeft className="h-4 w-4" />
-        Back to blog
+        <ArrowLeft className="h-3.5 w-3.5" />
+        Back to writing
       </Link>
-      <h1 className="text-4xl font-bold mb-2">{frontmatter?.title}</h1>
-      <p className="text-muted-foreground mb-8">
-        {new Date(frontmatter?.date).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
+      <h1 className="font-serif text-2xl sm:text-3xl !font-normal tracking-tight !mb-3 !mt-0">
+        {frontmatter?.title}
+      </h1>
+      <p className="text-xs font-mono text-muted-foreground !mb-10 !mt-0 not-prose">
+        {new Date(frontmatter?.date).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
         })}
       </p>
       <Content />

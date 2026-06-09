@@ -20,7 +20,7 @@ const selectLastFourteenMonths = (contributions: any[]) => {
 
 export default function GithubContribution() {
   return (
-    <div className="w-full flex justify-center overflow-x-auto hide-scrollbar">
+    <div className="w-full flex justify-center overflow-x-auto hide-scrollbar rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)]/30 p-4">
       <div className="min-w-max">
         <GitHubCalendar
           username="om2309"

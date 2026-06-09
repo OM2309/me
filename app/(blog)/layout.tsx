@@ -1,12 +1,10 @@
 import Navbar from "@/components/navbar";
 import { Metadata } from "next";
 
-
 export const metadata: Metadata = {
   title: "Blog - Anurag Sharma",
-  description: "Personal blog - collection of web development, database management, tools, and DevOps related posts.",
+  description: "Notes on web development, databases, tools, and DevOps.",
 };
-
 
 export default function BlogLayout({
   children,
@@ -14,9 +12,9 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-3xl mx-auto px-6 pb-20">
+    <div className="min-h-dvh bg-background text-foreground">
       <Navbar />
-      {children}
+      <div className="max-w-3xl mx-auto px-6 pb-24 pt-2">{children}</div>
     </div>
   );
 }
