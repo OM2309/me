@@ -56,13 +56,6 @@ export default function About() {
           </div>
         ))}
       </section>
-
-      <section className="space-y-4">
-        <SectionHeading>Contributions</SectionHeading>
-        <div className="rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)]/30 p-4 overflow-x-auto hide-scrollbar">
-          <GithubContribution />
-        </div>
-      </section>
     </div>
   );
 }
