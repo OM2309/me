@@ -29,7 +29,7 @@ const ExperienceCard = ({
         {/* Left: Logo and Titles */}
         <div className="flex items-center gap-3.5 min-w-0">
           {/* Company Logo Box */}
-          <div className="w-11 h-11 rounded-xl border border-zinc-200 dark:border-zinc-800/80 flex items-center justify-center overflow-hidden shrink-0 bg-white dark:bg-zinc-950/40">
+          {/* <div className="w-11 h-11 rounded-xl border border-zinc-200 dark:border-zinc-800/80 flex items-center justify-center overflow-hidden shrink-0 bg-white dark:bg-zinc-950/40">
             <Image
               src={logo}
               alt={name}
@@ -37,7 +37,7 @@ const ExperienceCard = ({
               height={44}
               className="object-cover w-full h-full"
             />
-          </div>
+          </div> */}
 
           {/* Titles */}
           <div className="space-y-0.5 min-w-0">

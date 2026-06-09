@@ -14,74 +14,83 @@ export default function Projects() {
         </h2>
       </div>
 
-      {/* Grid Container */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      {/* Grid Container - 4 Projects Layout (2x2) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.map((p: Project, idx) => (
           <BlurFade key={p.name} delay={0.05 * idx} duration={0.45}>
             <a
               href={p.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block group h-full flex flex-col justify-between"
+              className="block group h-full flex flex-col justify-between border border-zinc-800 rounded-xl p-4 hover:border-zinc-700 hover:bg-zinc-900/40 transition-all duration-300"
             >
-              <div className="space-y-3.5">
-                {/* Project Image Frame (rounded and bordered, representing preview window) */}
-                <div className="relative w-full aspect-[1.6/1] overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-zinc-50 dark:bg-zinc-900 shadow-sm transition-all duration-300">
+              <div className="space-y-3">
+                {/* Project Image Frame */}
+                <div className="relative w-full aspect-[1.6/1] overflow-hidden rounded-lg border border-zinc-800 bg-zinc-900 shadow-sm transition-all duration-300">
                   <Image
                     src={p.image}
                     alt={p.name}
                     fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.05]"
                     sizes="(max-width: 640px) 100vw, 300px"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 dark:group-hover:bg-white/5 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+                  
+                  {/* Coming Soon Overlay */}
+                  {/* {p.status === "coming-soon" && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+                      <div className="text-center">
+                        <p className="text-sm font-semibold text-zinc-400 tracking-widest mb-2">STAY TUNED</p>
+                        <p className="text-4xl font-bold text-zinc-100 drop-shadow-lg">Coming Soon</p>
+                      </div>
+                    </div>
+                  )} */}
                 </div>
 
                 {/* Details Section */}
-                <div className="space-y-1.5 px-0.5">
-                  {/* Name and Status */}
-                  <div className="flex items-center justify-between">
-                    <span className="font-semibold text-zinc-900 dark:text-zinc-100 text-[15px] transition-colors group-hover:text-amber-500">
+                <div className="space-y-2">
+                  {/* Name and Status Badge */}
+                  <div className="flex items-start justify-between gap-2">
+                    <span className="font-semibold text-zinc-100 text-sm leading-tight flex-1">
                       {p.name}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400">
-                      <span
-                        className={`w-1.5 h-1.5 rounded-full ${
-                          p.status === "complete" ? "bg-emerald-500" : "bg-amber-500"
-                        } ${p.status === "building" && "animate-pulse"}`}
-                      />
-                      <span className="text-[10px] font-mono tracking-tight capitalize">
-                        {p.status}
-                      </span>
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium whitespace-nowrap flex-shrink-0 ${
+                      p.status === "complete" 
+                        ? "bg-emerald-500/15 text-emerald-300 border border-emerald-500/30" 
+                        : p.status === "building"
+                        ? "bg-amber-500/15 text-amber-300 border border-amber-500/30"
+                        : "bg-blue-500/15 text-blue-300 border border-blue-500/30"
+                    }`}>
+                      {p.status === "complete" && "•"} {p.status === "complete" ? "Live" : p.status === "building" ? "Building" : "Coming Soon"}
                     </span>
                   </div>
 
-                  {/* Description paragraph */}
-                  <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-zinc-500 dark:text-zinc-400 line-clamp-2">
+                  {/* Description */}
+                  <p className="text-xs leading-relaxed text-zinc-400 line-clamp-2">
                     {p.description}
                   </p>
                 </div>
               </div>
 
-              {/* Bottom Footer Row: Tech Icons and View Project Link */}
-              <div className="flex items-center justify-between pt-3 px-0.5 border-t border-transparent flex-wrap gap-2 mt-3">
-                {/* Technologies List */}
+              {/* Bottom: Tech Icons and Link */}
+              <div className="flex items-center justify-between pt-3 border-t border-zinc-800/50 mt-3">
+                {/* Technologies */}
                 <div className="flex items-center gap-2">
-                  {p.technologies.slice(0, 5).map((tech) => (
+                  {p.technologies.slice(0, 4).map((tech) => (
                     <div
                       key={tech}
                       title={tech}
-                      className="opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-150"
+                      className="text-zinc-400 opacity-70 hover:opacity-100 hover:text-zinc-200 transition-all duration-150"
                     >
                       {getTechIcon(tech)}
                     </div>
                   ))}
                 </div>
 
-                {/* Arrow Link */}
-                <span className="inline-flex items-center gap-1 text-[11px] font-bold font-mono text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors duration-150">
-                  View Project
-                  <span className="text-[10px] leading-none transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 font-sans">&rarr;</span>
+                {/* Link */}
+                <span className="text-xs font-medium text-zinc-400 group-hover:text-zinc-200 transition-colors flex items-center gap-1">
+                  View
+                  <span className="transition-transform group-hover:translate-x-0.5">→</span>
                 </span>
               </div>
             </a>

@@ -28,7 +28,7 @@ export default function Home() {
         </BlurFade>
 
         {/* GitHub Contributions */}
-        <BlurFade delay={0.35} duration={0.5}>
+        <BlurFade delay={0.2} duration={0.5}>
           <GithubContribution />
         </BlurFade>
 

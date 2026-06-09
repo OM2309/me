@@ -18,7 +18,7 @@ export default function About() {
       {/* Row 1: Circular Avatar + Name/Subtitle */}
       <div className="flex items-center gap-4 sm:gap-5">
         {/* Profile Avatar */}
-        <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 border-amber-500 bg-zinc-100 dark:bg-zinc-900 shadow-sm">
+        <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden border-2 dark:bg-zinc-900 shadow-sm">
           <Image
             src="/images/dp.jpg"
             width={80}
