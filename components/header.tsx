@@ -13,11 +13,6 @@ const Header: React.FC = () => {
             About
           </p>
         </Link>
-        <Link href="/blog">
-          <p className="text-sm text-foreground/70 hover:text-foreground transition-colors cursor-pointer">
-            Blog
-          </p>
-        </Link>
         <Link href="/guest-book">
           <p className="text-sm text-foreground/70 hover:text-foreground transition-colors cursor-pointer">
             Guestbook

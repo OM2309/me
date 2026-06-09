@@ -9,7 +9,7 @@ import { CodeBlock } from "@/components/code-block";
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     img: (props) => (
-      <div className="my-8 -mx-5 sm:mx-0">
+      <figure className="my-8 -mx-5 sm:mx-0">
         <Image
           src={props.src as string}
           alt={props.alt as string}
@@ -21,11 +21,11 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
           priority={false}
         />
         {props.alt && (
-          <p className="text-center text-sm text-muted-foreground mt-3 italic">
+          <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
             {props.alt}
-          </p>
+          </figcaption>
         )}
-      </div>
+      </figure>
     ),
 
     h1: ({ children }) => (

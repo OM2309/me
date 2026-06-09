@@ -23,14 +23,16 @@ const Experience = () => {
       ]
     },
     {
-      name: "Octal IT Solution (CMMI Level 3 Appraised)",
+      name: "Octal IT Solution",
       role: "Software Developer · Full-time",
       duration: "Feb 2025 - Apr 2026",
       logo: "/images/octal.jpg",
       current: false,
       address: "Jaipur, Rajasthan, India · On-site",
       responsibilities: [
-        "Built smart and interactive web apps using modern technologies like React, Next.js, React Native, and the MERN stack."
+        "Built smart and interactive web apps using modern technologies like React, Next.js, React Native, and the MERN stack.",
+        "Implemented responsive designs and optimized performance across multiple platforms.",
+        "Contributed to team growth through knowledge sharing and mentoring junior developers."
       ],
       technologies: ["TypeScript", "Next.js", "React", "React Native", "MongoDB", "Express", "Node.js", "Tailwind CSS"],
       metrics: [
@@ -44,8 +46,8 @@ const Experience = () => {
   
   return (
     <div className="space-y-6 mb-10">
-      <h1 className="text-lg font-semibold text-black dark:text-white">
-        Experience
+      <h1 className="text-lg font-semibold text-foreground">
+        Experiences
       </h1>
       <div className="space-y-8">
         {companies.map((company, index) => (

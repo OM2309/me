@@ -6,6 +6,9 @@ import Technologies from "@/components/technologies";
 import HeroBanner from "@/components/hero-banner";
 import AnimeQuote from "@/components/anime-quote";
 import BlurFade from "@/components/ui/blur-fade";
+import BlogPost from "@/components/blog-post";
+import GithubContribution from "@/components/github-contribution";
+import ProfileStats from "@/components/profile-stats";
 
 export default function Home() {
   return (
@@ -24,23 +27,38 @@ export default function Home() {
           </div>
         </BlurFade>
 
+        {/* Profile Stats */}
+        <BlurFade delay={0.2} duration={0.5}>
+          <ProfileStats />
+        </BlurFade>
+
         {/* Experience Section */}
         <BlurFade delay={0.25} duration={0.5}>
           <Experience />
         </BlurFade>
 
-        {/* Projects Section */}
+        {/* GitHub Contributions */}
         <BlurFade delay={0.35} duration={0.5}>
+          <GithubContribution />
+        </BlurFade>
+
+        {/* Projects Section */}
+        <BlurFade delay={0.45} duration={0.5}>
           <Projects />
         </BlurFade>
 
         {/* Technologies Section */}
-        <BlurFade delay={0.45} duration={0.5}>
+        <BlurFade delay={0.55} duration={0.5}>
           <Technologies />
         </BlurFade>
 
+        {/* Blog Section */}
+        <BlurFade delay={0.65} duration={0.5}>
+          <BlogPost />
+        </BlurFade>
+
         {/* Anime Quote Section */}
-        <BlurFade delay={0.55} duration={0.5}>
+        <BlurFade delay={0.75} duration={0.5}>
           <AnimeQuote />
         </BlurFade>
       </div>
