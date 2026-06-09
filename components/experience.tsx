@@ -156,7 +156,7 @@ function RoleEntry({
                   <ul className="space-y-1.5 text-xs text-muted-foreground leading-relaxed">
                     {role.responsibilities.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <span className="text-muted-foreground/50 shrink-0">
+                        <span className="text-green-foreground/50 shrink-0">
                           •
                         </span>
                         <span>{item}</span>

@@ -20,13 +20,13 @@ const selectLastFourteenMonths = (contributions: any[]) => {
 
 export default function GithubContribution() {
   return (
-    <div className="w-full flex justify-center overflow-x-auto hide-scrollbar rounded-lg border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)]/30 p-4">
+    <div className="w-full flex justify-center overflow-x-auto hide-scrollbar rounded-lg">
       <div className="min-w-max">
         <GitHubCalendar
           username="om2309"
           transformData={(data) => selectLastFourteenMonths(data)}
           blockSize={10}
-          blockMargin={4}
+          blockMargin={5}
           fontSize={11}
           theme={{
             light: ["#f4f4f5", "#e4e4e7", "#d4d4d8", "#a1a1aa", "#71717a"],
