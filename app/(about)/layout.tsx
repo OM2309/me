@@ -12,7 +12,7 @@ export default function AboutLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-3xl mx-auto px-6 pb-20">
       <Navbar />
       {children}
     </div>

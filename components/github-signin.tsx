@@ -16,7 +16,7 @@ export default function GithubSignIn() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto">
       {session ? (
         <PostComposer />
       ) : (

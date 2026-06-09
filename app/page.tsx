@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="bg-background text-foreground max-w-2xl mx-auto px-6 pb-20 space-y-12">
+      <div className="bg-background text-foreground max-w-3xl mx-auto px-6 pb-20 space-y-12">
         {/* Banner Section */}
         <BlurFade delay={0.05} duration={0.5}>
           <HeroBanner />

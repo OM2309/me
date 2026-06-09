@@ -5,7 +5,7 @@ import { Suspense } from "react";
 
 const About = () => {
   return (
-    <div className="max-w-8xl mx-auto px-6 py-12 space-y-16">
+    <div className="w-full py-12 space-y-12">
       <section className="space-y-6">
         <h1 className="text-3xl font-bold">About Me</h1>
         <div className="space-y-5 text-lg text-muted-foreground leading-relaxed">
@@ -132,13 +132,6 @@ const About = () => {
         <GithubContribution />
       </section>
 
-      {/* Guestbook */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <section className="mt-8 border-t pt-8">
-          <h2 className="text-2xl font-semibold mb-4">Connect</h2>
-          <SocialMedia />
-        </section>
-      </Suspense>
 
       {/* Outside of Code */}
       <section className="space-y-6 pb-12">

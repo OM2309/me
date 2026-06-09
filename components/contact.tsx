@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";
 

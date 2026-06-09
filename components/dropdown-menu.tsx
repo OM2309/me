@@ -9,7 +9,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export function DropdownMenuHeader() {
   const [open, setOpen] = useState(false);

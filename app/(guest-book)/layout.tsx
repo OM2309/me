@@ -13,7 +13,7 @@ export default function GuestBookLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-3xl mx-auto px-6 pb-20">
       <Navbar />
       {children}
     </div>

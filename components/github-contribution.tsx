@@ -3,6 +3,18 @@
 import { GitHubCalendar } from "react-github-calendar";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
+const selectLastThreeMonths = (contributions: any[]) => {
+  const currentYear = new Date().getFullYear();
+  const currentMonth = new Date().getMonth();
+  const shownMonths = 3;
+  return contributions.filter((activity) => {
+    const date = new Date(activity.date);
+    const monthDifference =
+      (currentYear - date.getFullYear()) * 12 + (currentMonth - date.getMonth());
+    return monthDifference < shownMonths;
+  });
+};
+
 export default function GithubContribution() {
   return (
     <section className="space-y-6">
@@ -30,15 +42,16 @@ export default function GithubContribution() {
         </div>
 
         {/* Scrollable calendar view for mobile responsiveness */}
-        <div className="overflow-x-auto overflow-y-hidden pb-1 -mx-2 px-2">
-          <div className="min-w-[580px] flex justify-center">
+        <div className="overflow-x-auto overflow-y-hidden pb-1 hide-scrollbar">
+          <div className="flex justify-center">
             <GitHubCalendar
               username="om2309"
               blockSize={10}
               blockMargin={4}
               fontSize={11}
+              transformData={selectLastThreeMonths}
               labels={{
-                totalCount: "{{count}} contributions in the last 12 months",
+                totalCount: "{{count}} contributions in the last 3 months",
               }}
               theme={{
                 light: [

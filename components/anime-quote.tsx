@@ -9,13 +9,13 @@ export default function AnimeQuote() {
       </span>
       
       {/* Quote text */}
-      <p className="italic text-zinc-600 dark:text-zinc-400 text-sm sm:text-[15px] leading-relaxed max-w-md mx-auto">
-        I&rsquo;ve copied over a thousand jutsu. Not to steal them, but to understand them, and surpass those who created them.
+      <p className="italic text-zinc-600 dark:text-zinc-400 text-[15px] sm:text-base leading-relaxed max-w-md mx-auto">
+        If you don&rsquo;t like your destiny, don&rsquo;t accept it. Instead, have the courage to change it the way you want it to be.
       </p>
 
       {/* Character Name */}
-      <div className="text-[10px] sm:text-xs tracking-[0.25em] font-semibold text-zinc-400 dark:text-zinc-500 uppercase">
-        —— KAKASHI HATAKE ——
+      <div className="text-[10px] sm:text-xs tracking-[0.25em] font-semibold text-zinc-500 dark:text-zinc-500 uppercase">
+        —— ANAMCARA (NARUTO UZUMAKI) ——
       </div>
     </div>
   );

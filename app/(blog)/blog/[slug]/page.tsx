@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { ArrowLeft } from 'lucide-react'
 
 type Props = {
@@ -21,7 +21,7 @@ export default async function PostPage({ params }: Props) {
   }
 
   return (
-    <article className="prose prose-lg dark:prose-invert max-w-4xl mx-auto px-5 py-12">
+    <article className="prose dark:prose-invert w-full py-12">
       <Link
         href="/blog"
         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6 no-underline"

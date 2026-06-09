@@ -59,7 +59,7 @@ export default function About() {
       </div>
 
       {/* Row 2: Bio Text */}
-      <p className="text-sm sm:text-[14.5px] leading-relaxed text-zinc-600 dark:text-zinc-400 pt-1.5">
+      <p className="text-[15px] sm:text-[16px] leading-relaxed text-zinc-600 dark:text-zinc-400 pt-1.5">
         I taught myself to code and now build full-stack and mobile apps that are{" "}
         <strong className="font-semibold text-black dark:text-white">
           fast, beautiful, and production-ready

@@ -1,6 +1,11 @@
 export type SocialMediaPlatform = "linkedin" | "github" | "instagram" | "x" | "discord" | "gmail";
 
 
+export interface Metric {
+  value: string;
+  label: string;
+}
+
 export interface ExperienceCardProps {
   name: string;
   role: string;
@@ -10,6 +15,7 @@ export interface ExperienceCardProps {
   address: string;
   responsibilities: string[];
   technologies: string[];
+  metrics?: Metric[];
 }
 
 

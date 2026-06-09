@@ -57,7 +57,7 @@ export default function Projects() {
                   </div>
 
                   {/* Description paragraph */}
-                  <p className="text-[13px] leading-relaxed text-zinc-500 dark:text-zinc-400 line-clamp-2">
+                  <p className="text-[13.5px] sm:text-[14px] leading-relaxed text-zinc-500 dark:text-zinc-400 line-clamp-2">
                     {p.description}
                   </p>
                 </div>

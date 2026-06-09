@@ -14,7 +14,7 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="max-w-3xl mx-auto px-6 pb-20">
       <Navbar />
       {children}
     </div>

@@ -15,11 +15,17 @@ const Experience = () => {
         "Perform code reviews, optimize database structures, and establish engineering best practices."
       ],
       technologies: ["TypeScript", "Next.js", "React", "Node.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS"],
+      metrics: [
+        { value: "React/Next", label: "Core Stack" },
+        { value: "Full-time", label: "Employment" },
+        { value: "Jaipur", label: "Location" },
+        { value: "Consultant", label: "Role" }
+      ]
     },
     {
       name: "Octal IT Solution (CMMI Level 3 Appraised)",
       role: "Software Developer · Full-time",
-      duration: "Feb 2025 - Apr 2026 · 1 yr 3 mos",
+      duration: "Feb 2025 - Apr 2026",
       logo: "/images/octal.jpg",
       current: false,
       address: "Jaipur, Rajasthan, India · On-site",
@@ -27,6 +33,12 @@ const Experience = () => {
         "Built smart and interactive web apps using modern technologies like React, Next.js, React Native, and the MERN stack."
       ],
       technologies: ["TypeScript", "Next.js", "React", "React Native", "MongoDB", "Express", "Node.js", "Tailwind CSS"],
+      metrics: [
+        { value: "MERN/Native", label: "Core Stack" },
+        { value: "Full-time", label: "Employment" },
+        { value: "Jaipur", label: "Location" },
+        { value: "1 yr 3 mos", label: "Duration" }
+      ]
     }
   ];
   
