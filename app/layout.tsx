@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import { Toaster } from "sonner";
 import { Oneko } from "@/components/Oneko";
 import { ViewTransitions } from "next-view-transitions";
+import { Analytics } from "@vercel/analytics/next"
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -75,6 +76,7 @@ export default function RootLayout({
         <body
           className={`${jetbrainsMono.variable} ${dmSans.variable} ${instrumentSerif.variable} antialiased`}
         >
+          <Analytics />
           <ThemeProvider
             attribute="class"
             forcedTheme="dark"
