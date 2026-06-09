@@ -8,60 +8,59 @@ import { Oneko } from "@/components/Oneko";
 import { ViewTransitions } from "next-view-transitions";
 
 const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-dm-sans',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
   preload: true,
-  fallback: ['system-ui', 'arial'],
+  fallback: ["system-ui", "arial"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains-mono',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
   preload: true,
-  fallback: ['monospace'],
+  fallback: ["monospace"],
 });
 
 const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-instrument-serif',
-  display: 'swap',
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-instrument-serif",
+  display: "swap",
   preload: true,
-  fallback: ['Georgia', 'serif'],
+  fallback: ["Georgia", "serif"],
 });
 
+const siteUrl = "https://anurag-uat.vercel.app";
+const siteDescription =
+  "I build full stack web and mobile apps with React and Next.js. Based in India.";
 
 export const metadata: Metadata = {
-  title: 'Anurag Sharma - Full Stack Developer',
-  description:
-    'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as om2309. Building scalable web applications with modern technologies.',
+  metadataBase: new URL(siteUrl),
+  title: "Anurag Sharma",
+  description: siteDescription,
   openGraph: {
-    title: 'Anurag Sharma - Full Stack Developer',
-    description:
-      'Full Stack Developer from India specializing in React, Next.js, and TypeScript. Find me on GitHub as om2309. Building scalable web applications with modern technologies.',
-    url: 'https://anurag-uat.vercel.app',
-    siteName: 'Anurag Sharma Portfolio',
+    title: "Anurag Sharma",
+    description: siteDescription,
+    url: siteUrl,
+    siteName: "Anurag Sharma",
     images: [
       {
-        url: 'https://anurag-uat.vercel.app/og?title=Anurag%20Sharma%20-%20Full%20Stack%20Developer&description=Building%20scalable%20web%20applications%20with%20modern%20technologies',
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: 'Anurag Sharma Portfolio',
+        alt: "Anurag Sharma portfolio",
       },
     ],
-    locale: 'en_US',
-    type: 'website',
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Anurag Sharma - Full Stack Developer',
-    description:
-      'Full Stack Developer from India specializing in React, Next.js, and TypeScript.',
-    images: [
-      'https://anurag-uat.vercel.app/og?title=Anurag%20Sharma%20-%20Full%20Stack%20Developer&description=Building%20scalable%20web%20applications%20with%20modern%20technologies',
-    ],
+    card: "summary_large_image",
+    title: "Anurag Sharma",
+    description: siteDescription,
+    images: ["/images/og-image.png"],
   },
 };
 
@@ -73,7 +72,9 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" className="dark" suppressHydrationWarning>
-        <body className={`${jetbrainsMono.variable} ${dmSans.variable} ${instrumentSerif.variable} antialiased`}>
+        <body
+          className={`${jetbrainsMono.variable} ${dmSans.variable} ${instrumentSerif.variable} antialiased`}
+        >
           <ThemeProvider
             attribute="class"
             forcedTheme="dark"
@@ -87,7 +88,7 @@ export default function RootLayout({
               toastOptions={{
                 duration: 5000,
                 style: {
-                  fontFamily: 'var(--font-dm-sans)',
+                  fontFamily: "var(--font-dm-sans)",
                 },
               }}
             />

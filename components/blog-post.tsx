@@ -72,7 +72,7 @@ export default async function BlogPosts({
                       day: "numeric",
                     })}
                   </time>
-                  <h3 className="font-serif text-[17px] sm:text-lg text-foreground leading-snug group-hover:text-foreground/80 transition-colors">
+                  <h3 className="font-serif text-lg sm:text-xl text-foreground leading-snug group-hover:text-foreground/80 transition-colors">
                     {post.frontmatter.title}
                   </h3>
                   <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">

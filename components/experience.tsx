@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import SectionHeading from "@/components/ui/section-heading";
 
 interface Role {
   title: string;
@@ -242,13 +241,10 @@ function CompanyBlock({ company }: { company: Company }) {
 
 export default function Experience() {
   return (
-    <div className="space-y-4">
-      <SectionHeading>Story So Far</SectionHeading>
-      <div className="space-y-1">
-        {companies.map((company) => (
-          <CompanyBlock key={company.name} company={company} />
-        ))}
-      </div>
+    <div className="space-y-1">
+      {companies.map((company) => (
+        <CompanyBlock key={company.name} company={company} />
+      ))}
     </div>
   );
 }

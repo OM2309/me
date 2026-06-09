@@ -14,7 +14,7 @@ export default function SectionHeading({
   return (
     <Tag
       className={cn(
-        "font-serif text-[15px] sm:text-base text-foreground tracking-tight",
+        "font-serif text-lg sm:text-xl text-foreground tracking-tight",
         className
       )}
     >

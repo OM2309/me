@@ -50,7 +50,7 @@ export default async function Home() {
             <Technologies />
           </HomeSection>
 
-          <HomeSection id="experience" delay={0.04}>
+          <HomeSection id="experience" title="Experience So Far" delay={0.04}>
             <Experience />
           </HomeSection>
 

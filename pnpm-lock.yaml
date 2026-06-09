@@ -98,6 +98,9 @@ importers:
       next-view-transitions:
         specifier: ^0.3.4
         version: 0.3.4(next@16.0.7(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      penflow:
+        specifier: ^0.1.0
+        version: 0.1.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       postgres:
         specifier: ^3.4.7
         version: 3.4.7
@@ -3453,6 +3456,12 @@ packages:
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
 
+  penflow@0.1.0:
+    resolution: {integrity: sha512-vP9a2Hye8OGR56zCHPcvvoaFI32CYxNHe96KW/biKvxgN1o2qyz7m/CqhID8SwJ8SvvXRNcF5ocrQRnRJTOfaw==}
+    peerDependencies:
+      react: '>=18'
+      react-dom: '>=18'
+
   perfect-debounce@1.0.0:
     resolution: {integrity: sha512-xCy9V055GLEqoFaHoC1SoLIaLmWctgCUaBaWxDZ7/Zx4CTyX7cJQLJOok/orfjZAh9kEYpjJa4d0KcJmCbctZA==}
 
@@ -4011,6 +4020,10 @@ packages:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  typr.js@1.0.0:
+    resolution: {integrity: sha512-1fcCBnRerF4hLBrNVZyf6OwpWummpKomQ7N7OuWf3qzi4+XNSxtOnn3zvQlSwpV5SW/b0umULr5hQwOUNkZZUg==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
@@ -7615,6 +7628,12 @@ snapshots:
   pathe@2.0.3:
     optional: true
 
+  penflow@0.1.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0):
+    dependencies:
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
+      typr.js: 1.0.0
+
   perfect-debounce@1.0.0:
     optional: true
 
@@ -8323,6 +8342,8 @@ snapshots:
       - supports-color
 
   typescript@5.9.3: {}
+
+  typr.js@1.0.0: {}
 
   unbox-primitive@1.1.0:
     dependencies:

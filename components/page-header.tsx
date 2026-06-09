@@ -14,7 +14,7 @@ export default function PageHeader({
 }: PageHeaderProps) {
   return (
     <header className={cn("space-y-2 mb-10", className)}>
-      <SectionHeading as="h1" className="text-xl sm:text-2xl">
+      <SectionHeading as="h1" className="text-2xl sm:text-[1.75rem]">
         {title}
       </SectionHeading>
       {description ? (

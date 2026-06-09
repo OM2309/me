@@ -98,7 +98,7 @@ export default function Technologies() {
 
   return (
     <div className="text-sm">
-      <SectionHeading className="mb-3">Tools I use? See below</SectionHeading>
+      <SectionHeading className="mb-4">Tools I use? See below</SectionHeading>
 
       <div>
         <p className="leading-[2] text-muted-foreground mb-2">

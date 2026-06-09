@@ -4,6 +4,7 @@ import Image from "next/image";
 import { toast } from "sonner";
 import { FaRegCopy } from "react-icons/fa";
 import ProfileViewCounter from "@/components/profile-view-counter";
+import NamePenflow from "@/components/name-penflow";
 
 interface AboutProps {
   initialViewCount?: number;
@@ -30,12 +31,12 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
           />
         </div>
 
-        <div className="min-w-0 pt-0.5">
+        <div className="min-w-0 pt-0.5 flex-1">
           <h1 className="font-serif text-3xl sm:text-[2.35rem] leading-[1.1] tracking-tight text-foreground">
             Anurag Sharma
           </h1>
           <p className="mt-1.5 text-sm text-muted-foreground font-mono tracking-tight">
-            Engineer · Consultant · Full-stack Developer
+            Engineer · Consultant · Full stack developer
           </p>
         </div>
       </div>
