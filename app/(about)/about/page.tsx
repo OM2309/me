@@ -2,6 +2,8 @@ import { webdev, tools, database, devops } from "@/data/icons/tech-stack";
 import GithubContribution from "@/components/github-contribution";
 import PageHeader from "@/components/page-header";
 import SectionHeading from "@/components/ui/section-heading";
+import BlurFade from "@/components/ui/blur-fade";
+import HeroBanner from "@/components/hero-banner";
 
 const techGroups = [
   { title: "Web Development", items: webdev },
@@ -13,6 +15,7 @@ const techGroups = [
 export default function About() {
   return (
     <div className="space-y-14">
+     
       <PageHeader
         title="About"
         description="Full-stack developer building scalable, performant, and beautiful web applications — from pixel-perfect UIs to robust backend systems."
@@ -27,6 +30,9 @@ export default function About() {
       </section>
 
       <section className="space-y-8">
+
+
+
         <SectionHeading>Stack & Tools</SectionHeading>
         {techGroups.map((group) => (
           <div key={group.title} className="space-y-3">

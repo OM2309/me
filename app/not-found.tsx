@@ -37,16 +37,6 @@ export default function NotFound() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,rgba(0,0,0,0.55)_100%)]" />
 
         <div className="relative z-10 flex flex-col items-center px-6 pb-12 sm:pb-16 text-center">
-          <p className="font-serif text-5xl sm:text-6xl text-foreground/90 mb-2 tracking-tight">
-            404
-          </p>
-          <p className="text-[11px] uppercase tracking-[0.35em] text-muted-foreground mb-3">
-            Page not found
-          </p>
-          <p className="text-sm text-muted-foreground/80 mb-8 max-w-xs">
-            This path doesn&apos;t exist or has been moved.
-          </p>
-
           <Link
             href="/"
             className="group inline-flex items-center gap-2 rounded-full border border-[var(--color-border-subtle)] bg-[var(--color-tag-bg)] px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-foreground/20 hover:bg-[var(--color-button-bg)]"
