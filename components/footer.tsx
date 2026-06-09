@@ -1,49 +1,70 @@
 import { Link } from "next-view-transitions";
-import Image from "next/image";
+import { FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden mt-16">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/footer-bg-dark.webp"
-          alt="Footer Samurai Background"
-          fill
-          sizes="100vw"
-          className="object-cover object-center dark:brightness-[0.4] brightness-[0.8] saturate-[0.8]"
-          priority
-        />
-        {/* Sleek overlay for text readability */}
-        <div className="absolute inset-0 bg-white/60 dark:bg-black/50" />
-      </div>
+    <footer className="w-full border-t border-zinc-800/80 dark:bg-black/50">
+      <div className="max-w-3xl mx-auto px-6 py-12">
+        {/* Footer Content Grid */}
+        <div className="flex items-center justify-between gap-4 flex-wrap">
+          {/* Left: Copyright */}
+          <div className="text-xs sm:text-sm text-zinc-400 font-mono">
+            © 2026 Anurag Sharma.
+          </div>
 
-      {/* Footer Content */}
-      <div className="relative z-10 max-w-3xl mx-auto px-6 py-16 flex flex-col items-center justify-center text-center space-y-3 font-sans text-xs sm:text-[13px]">
-        <p className="text-zinc-800 dark:text-zinc-100 tracking-wide font-normal">
-          Built by{" "}
-          <Link
-            href="https://github.com/OM2309"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold underline text-black dark:text-white hover:opacity-80 transition-opacity"
-          >
-            om2309
-          </Link>
-          . The source code is available on{" "}
-          <Link
-            href="https://github.com/OM2309"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold underline text-black dark:text-white hover:opacity-80 transition-opacity"
-          >
-            GitHub
-          </Link>
-          .
-        </p>
-        <p className="text-zinc-550 dark:text-zinc-400 text-[11px] sm:text-xs">
-          &copy; 2026 Anurag Sharma &middot; All rights reserved
-        </p>
+          {/* Center: Navigation Links */}
+          <div className="flex items-center gap-6 text-xs sm:text-sm">
+            <Link
+              href="/about"
+              className="text-zinc-400 hover:text-foreground transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/guest-book"
+              className="text-zinc-400 hover:text-foreground transition-colors"
+            >
+              Guestbook
+            </Link>
+            <a
+              href="https://github.com/OM2309"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-foreground transition-colors"
+            >
+              Projects
+            </a>
+          </div>
+
+          {/* Right: Social Links */}
+          <div className="flex items-center gap-4">
+            <a
+              href="https://twitter.com/om2309"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-foreground transition-colors"
+              title="Twitter"
+            >
+              <FaTwitter className="h-4 w-4" />
+            </a>
+            <a
+              href="mailto:23anuragsharma@gmail.com"
+              className="text-zinc-400 hover:text-foreground transition-colors"
+              title="Email"
+            >
+              <FaEnvelope className="h-4 w-4" />
+            </a>
+            <a
+              href="https://github.com/om2309"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 hover:text-foreground transition-colors"
+              title="GitHub"
+            >
+              <FaGithub className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

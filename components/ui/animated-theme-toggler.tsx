@@ -80,7 +80,7 @@ export const AnimatedThemeToggler = ({
 
   return (
     <Button
-      variant="outline"
+      variant="none"
       size="icon"
       ref={buttonRef}
       onClick={toggleTheme}

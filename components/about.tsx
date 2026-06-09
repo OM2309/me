@@ -68,14 +68,14 @@ export default function About() {
       </p>
 
       {/* Row 3: Spotify status */}
-      <div className="pt-0.5">
+      {/* <div className="pt-0.5">
         <SpotifyStatus />
-      </div>
+      </div> */}
 
       {/* Row 4: Social links */}
-      <div className="pt-0.5">
+      {/* <div className="pt-0.5">
         <SocialLinks />
-      </div>
+      </div> */}
     </section>
   );
 }

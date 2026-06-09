@@ -27,20 +27,21 @@ export default function Home() {
           </div>
         </BlurFade>
 
-        {/* Profile Stats */}
+        {/* GitHub Contributions */}
+        <BlurFade delay={0.35} duration={0.5}>
+          <GithubContribution />
+        </BlurFade>
+
+        {/* Profile Stats
         <BlurFade delay={0.2} duration={0.5}>
           <ProfileStats />
-        </BlurFade>
+        </BlurFade> */}
 
         {/* Experience Section */}
         <BlurFade delay={0.25} duration={0.5}>
           <Experience />
         </BlurFade>
 
-        {/* GitHub Contributions */}
-        <BlurFade delay={0.35} duration={0.5}>
-          <GithubContribution />
-        </BlurFade>
 
         {/* Projects Section */}
         <BlurFade delay={0.45} duration={0.5}>
