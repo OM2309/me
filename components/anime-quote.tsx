@@ -3,10 +3,10 @@
 export default function AnimeQuote() {
   return (
     <div className="relative py-10 text-center max-w-lg mx-auto select-none">
-      <div className="absolute inset-0 rounded-2xl border border-rose-500/10 bg-gradient-to-b from-rose-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 rounded-2xl  pointer-events-none" />
 
       <div className="relative space-y-5 px-6">
-        <span className="block text-4xl text-rose-400/80 font-serif leading-none">
+        <span className="block text-4xl text-white-400/80 font-serif leading-none">
           &ldquo;
         </span>
 
