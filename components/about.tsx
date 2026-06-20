@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { FaRegCopy } from "react-icons/fa";
 import ProfileViewCounter from "@/components/profile-view-counter";
 import NamePenflow from "@/components/name-penflow";
+import LocationMap from "@/components/location-map";
 
 interface AboutProps {
   initialViewCount?: number;
@@ -70,6 +71,10 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
           </button>
         </div>
       </div>
+
+      {/* <div className="mt-6">
+        <LocationMap />
+      </div> */}
     </header>
   );
 }
