@@ -37,7 +37,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
             Anurag Sharma
           </h1>
           <p className="mt-1.5 text-sm text-muted-foreground font-mono tracking-tight">
-            Engineer · Consultant · Full stack developer
+            22 · Engineer · Consultant 
           </p>
         </div>
       </div>
