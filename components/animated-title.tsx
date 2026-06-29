@@ -8,7 +8,7 @@ export function AnimatedTitle() {
       className="text-4xl sm:text-5xl font-bold bg-linear-to-r from-black to-zinc-600 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent leading-tight"
       duration={100}
     >
-      OM
+      Anurag Sharma
     </TypingAnimation>
   );
 }

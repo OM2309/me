@@ -51,7 +51,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
                 src="/images/dp.jpg"
                 width={96}
                 height={96}
-                alt="OM"
+                alt="Anurag Sharma"
                 className="object-cover w-full h-full"
                 priority
               />
@@ -64,7 +64,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
             <div className="relative aspect-square w-full rounded-3xl overflow-hidden border border-white/10 bg-white shadow-2xl">
               <Image
                 src="/images/dp.jpg"
-                alt="OM"
+                alt="Anurag Sharma"
                 fill
                 className="object-cover w-full h-full"
                 priority
@@ -88,7 +88,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
       {/* Name & Title */}
       {/* <div className="min-w-0">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-          OM
+          Anurag Sharma
         </h1>
         <TextAnimate
           key={subtitleIndex}

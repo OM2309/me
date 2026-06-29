@@ -8,7 +8,7 @@ const Penflow = dynamic(
     ssr: false,
     loading: () => (
       <span className="font-serif text-[2rem] sm:text-4xl text-foreground">
-        OM
+        Anurag Sharma
       </span>
     ),
   }
@@ -20,7 +20,7 @@ interface NamePenflowProps {
 }
 
 export default function NamePenflow({
-  text = "OM",
+  text = "Anurag Sharma",
   className,
 }: NamePenflowProps) {
   return (
