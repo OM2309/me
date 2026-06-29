@@ -36,21 +36,21 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
 
   return (
     <header className="w-full flex flex-col gap-6">
-      {/* Avatar & Name */}
-      <div className="flex items-center gap-4.5">
+      {/* Avatar */}
+      <div className="relative z-10 -mt-16 sm:-mt-20 pl-1">
         <Dialog>
           <DialogTrigger asChild>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-zinc-900 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
+              className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-3xl overflow-hidden border-4 border-white dark:border-zinc-900 bg-black cursor-pointer shadow-lg outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
               aria-label="View profile photo"
             >
               <Image
                 src="/images/dp.jpg"
-                width={80}
-                height={80}
+                width={96}
+                height={96}
                 alt="OM"
                 className="object-cover w-full h-full"
                 priority
@@ -83,25 +83,26 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
             </div>
           </DialogContent>
         </Dialog>
+      </div>
 
-        <div className="min-w-0 pt-0.5 flex-1">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            OM
-          </h1>
-          <TextAnimate
-            key={subtitleIndex}
-            animation="blurIn"
-            as="p"
-            by="character"
-            className="mt-1 text-sm text-muted-foreground font-mono"
-          >
-            {SUBTITLES[subtitleIndex]}
-          </TextAnimate>
-        </div>
+      {/* Name & Title */}
+      <div className="min-w-0">
+        <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+          OM
+        </h1>
+        <TextAnimate
+          key={subtitleIndex}
+          animation="blurIn"
+          as="p"
+          by="character"
+          className="mt-1 text-sm text-muted-foreground font-mono"
+        >
+          {SUBTITLES[subtitleIndex]}
+        </TextAnimate>
       </div>
 
       {/* Metadata Columns */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4.5 font-mono">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4.5 font-mono">
         <div>
           <span className="block text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
             Location
@@ -140,18 +141,13 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
             <ProfileViewCounter initialCount={initialViewCount} />
           </span>
         </div>
-      </div>
+      </div> */}
 
       {/* Bio Paragraphs */}
       <div className="space-y-4 text-[15px] sm:text-base leading-relaxed text-muted-foreground">
         <p>
-          I build full-stack web products end-to-end, obsessing over small details that make software feel right to use.
-        </p>
-        <p>
-          Currently working with <strong className="text-[#fafafa] font-semibold">TypeScript</strong>,{" "}
-          <strong className="text-[#fafafa] font-semibold">React</strong>,{" "}
-          <strong className="text-[#fafafa] font-semibold">Next.js</strong>, and{" "}
-          <strong className="text-[#fafafa] font-semibold">Tailwind CSS</strong>.
+          I build modern, scalable web applications with a focus on performance, clean architecture, and great user experience.
+          Always exploring new technologies and continuously improving my skills to build better software.
         </p>
       </div>
 
