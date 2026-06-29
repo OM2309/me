@@ -13,6 +13,7 @@ interface AboutProps {
 const SUBTITLES = [
   "Consultant",
   "Software Developer",
+  "Web 3"
 ];
 
 export default function About({ initialViewCount = 0 }: AboutProps) {
