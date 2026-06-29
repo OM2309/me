@@ -50,7 +50,7 @@ export async function GET(request: Request) {
                   letterSpacing: "-0.03em",
                 }}
               >
-                Anurag Sharma
+                OM
               </div>
               <div style={{ fontSize: 24, color: "#888", fontWeight: 500 }}>
                 @OM2309
@@ -90,7 +90,7 @@ export async function GET(request: Request) {
             src="https://avatars.githubusercontent.com/u/129600042?v=4"
             width={180}
             height={180}
-            alt="Anurag Sharma"
+            alt="OM"
             style={{
               borderRadius: "50%",
               border: "4px solid #222",

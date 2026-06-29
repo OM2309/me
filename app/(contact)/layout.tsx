@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact - Anurag Sharma",
+  title: "Contact - OM",
   description: "Get in touch — I'll get back to you as soon as possible.",
 };
 

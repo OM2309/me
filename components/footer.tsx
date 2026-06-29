@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div className="space-y-1.5">
             <p className="font-serif text-[15px] text-foreground">
-              Anurag Sharma
+              OM
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
               Built with Next.js.{" "}
@@ -72,7 +72,7 @@ export default function Footer() {
         </div>
 
         <p className="mt-8 pt-6 border-t border-[var(--color-border-subtle)] text-xs font-mono text-muted-foreground/70">
-          © {new Date().getFullYear()} Anurag Sharma
+          © {new Date().getFullYear()} OM
         </p>
       </div>
     </footer>

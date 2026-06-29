@@ -46,19 +46,19 @@ const siteDescription =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Anurag Sharma",
+  title: "OM",
   description: siteDescription,
   openGraph: {
-    title: "Anurag Sharma",
+    title: "OM",
     description: siteDescription,
     url: siteUrl,
-    siteName: "Anurag Sharma",
+    siteName: "OM",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Anurag Sharma portfolio",
+        alt: "OM portfolio",
       },
     ],
     locale: "en_US",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Anurag Sharma",
+    title: "OM",
     description: siteDescription,
     images: ["/images/og-image.png"],
   },

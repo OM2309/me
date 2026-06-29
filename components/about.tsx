@@ -5,6 +5,14 @@ import Image from "next/image";
 import ProfileViewCounter from "@/components/profile-view-counter";
 import SocialLinks from "@/components/social-links";
 import { TextAnimate } from "@/components/ui/text-animate";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { motion } from "motion/react";
+import { XIcon } from "lucide-react";
 
 interface AboutProps {
   initialViewCount?: number;
@@ -30,20 +38,55 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
     <header className="w-full flex flex-col gap-6">
       {/* Avatar & Name */}
       <div className="flex items-center gap-4.5">
-        <div className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-zinc-900">
-          <Image
-            src="/images/dp.jpg"
-            width={80}
-            height={80}
-            alt="Anurag Sharma"
-            className="object-cover w-full h-full"
-            priority
-          />
-        </div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              className="shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-[var(--color-border-subtle)] bg-zinc-900 cursor-pointer outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
+              aria-label="View profile photo"
+            >
+              <Image
+                src="/images/dp.jpg"
+                width={80}
+                height={80}
+                alt="OM"
+                className="object-cover w-full h-full"
+                priority
+              />
+            </motion.button>
+          </DialogTrigger>
+          <DialogContent
+            className="max-w-[calc(100vw-3rem)] xs:max-w-[360px] sm:max-w-[400px] p-0 overflow-hidden border-none bg-transparent shadow-none"
+            showCloseButton={false}
+          >
+            <div className="relative aspect-square w-full rounded-3xl overflow-hidden border border-white/10 bg-white shadow-2xl">
+              <Image
+                src="/images/dp.jpg"
+                alt="OM"
+                fill
+                className="object-cover w-full h-full"
+                priority
+              />
+              <DialogClose asChild>
+                <motion.button
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-xs hover:bg-black/60 cursor-pointer border border-white/10 outline-hidden"
+                  aria-label="Close dialog"
+                >
+                  <XIcon className="h-5 w-5" />
+                </motion.button>
+              </DialogClose>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         <div className="min-w-0 pt-0.5 flex-1">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Anurag Sharma
+            OM
           </h1>
           <TextAnimate
             key={subtitleIndex}
