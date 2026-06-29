@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { DM_Sans, Instrument_Serif, JetBrains_Mono, Geist } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/footer";
 import { Toaster } from "sonner";
@@ -31,6 +31,13 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
   preload: true,
   fallback: ["Georgia", "serif"],
+});
+
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+  preload: true,
 });
 
 const siteUrl = "https://anurag-uat.vercel.app";
@@ -74,7 +81,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" className="dark" suppressHydrationWarning>
         <body
-          className={`${jetbrainsMono.variable} ${dmSans.variable} ${instrumentSerif.variable} antialiased`}
+          className={`${jetbrainsMono.variable} ${dmSans.variable} ${instrumentSerif.variable} ${geist.variable} antialiased`}
         >
           <Analytics />
           <ThemeProvider

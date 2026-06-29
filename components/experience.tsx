@@ -27,12 +27,12 @@ const companies: Company[] = [
   {
     name: "Memorres",
     logo:
-      "https://media.licdn.com/dms/image/v2/D560BAQFvlZNd4LPNoQ/company-logo_200_200/company-logo_200_200/0/1722860798119/memorres_logo?e=1782345600&v=beta&t=76QE2aYmw4SD8WwaYRbhBRV8L-3Pz9-s9HEOFXZvhNE",
+      "https://media.licdn.com/dms/image/v2/D560BAQFvlZNd4LPNoQ/company-logo_200_200/company-logo_200_200/0/1722860798119/memorres_logo?e=1784160000&v=beta&t=_BkE3ZmxnAftAuqw31doESF6mwYNh1sxPUy23uFxVDA",
     current: true,
     roles: [
       {
         title: "Consultant",
-        duration: "Apr 2026 - Present",
+        duration: "Apr 2026",
         location: "Jaipur, Rajasthan, India",
         type: "Full-Time",
         expandable: true,

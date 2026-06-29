@@ -30,7 +30,7 @@ export default function GithubContribution() {
           fontSize={11}
           theme={{
             light: ["#f4f4f5", "#e4e4e7", "#d4d4d8", "#a1a1aa", "#71717a"],
-            dark: ["#18181b", "#27272a", "#3f3f46", "#52525b", "#a1a1aa"],
+            dark: ["#27272a", "#52525b", "#71717a", "#d4d4d8", "#f4f4f5"],
           }}
           renderBlock={(block: any, activity: any) =>
             cloneElement(block, {

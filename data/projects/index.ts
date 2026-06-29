@@ -19,22 +19,22 @@ export const projects: Project[] = [
     status: "complete",
     link: "http://sunlakecards.com/",
   },
-  {
-    name: "AI Agent Orchestrator",
-    description:
-      "An intelligent multi-agent system that automates complex workflows using LLMs, real-time processing, and intelligent task distribution for enterprise applications.",
-    image: "/images/coming-soon.webp",
-    technologies: ["TypeScript", "LangChain", "Node.js", "React", "PostgreSQL"],
-    status: "coming-soon",
-    link: "#",
-  },
-  {
-    name: "Web3 DApp Platform",
-    description:
-      "A decentralized application platform built with Solidity, ethers.js, and Web3.js enabling seamless blockchain interactions and smart contract integrations.",
-    image: "/images/coming-soon.webp",
-    technologies: ["Solidity", "ethers.js", "Next.js", "Hardhat", "Web3.js"],
-    status: "coming-soon",
-    link: "#",
-  },
+  // {
+  //   name: "AI Agent Orchestrator",
+  //   description:
+  //     "An intelligent multi-agent system that automates complex workflows using LLMs, real-time processing, and intelligent task distribution for enterprise applications.",
+  //   image: "/images/coming-soon.webp",
+  //   technologies: ["TypeScript", "LangChain", "Node.js", "React", "PostgreSQL"],
+  //   status: "coming-soon",
+  //   link: "#",
+  // },
+  // {
+  //   name: "Web3 DApp Platform",
+  //   description:
+  //     "A decentralized application platform built with Solidity, ethers.js, and Web3.js enabling seamless blockchain interactions and smart contract integrations.",
+  //   image: "/images/coming-soon.webp",
+  //   technologies: ["Solidity", "ethers.js", "Next.js", "Hardhat", "Web3.js"],
+  //   status: "coming-soon",
+  //   link: "#",
+  // },
 ];
