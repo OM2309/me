@@ -4,13 +4,10 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import TechTag from "@/components/tech-tag";
 import SectionHeading from "@/components/ui/section-heading";
-import { webdev, tools, database, devops } from "@/data/icons/tech-stack";
 import {
   FaJs,
-  FaReact,
-  FaGithub,
-  FaHtml5,
-  FaCss3Alt,
+  FaAnchor,
+  FaAws,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -19,16 +16,16 @@ import {
   SiPostgresql,
   SiPrisma,
   SiDrizzle,
-  SiMongodb,
-  SiNodedotjs,
   SiExpress,
   SiNestjs,
   SiDocker,
-  SiVercel,
-  SiNetlify,
-  SiPostman,
-  SiOpenai,
+  SiSolidity,
+  SiPython,
+  SiRust,
+  SiKubernetes,
+  SiGithubactions,
 } from "react-icons/si";
+import { GiAnvil } from "react-icons/gi";
 import { VscVscode } from "react-icons/vsc";
 
 const categories = [
@@ -37,58 +34,28 @@ const categories = [
     items: [
       { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
       { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
-      { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-      { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-      { name: "Node.js", icon: <SiNodedotjs className="text-green-500" /> },
-      { name: "Postgres", icon: <SiPostgresql className="text-blue-400" /> },
-      { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+      { name: "Solidity", icon: <SiSolidity className="text-slate-400" /> },
+      { name: "Python", icon: <SiPython className="text-blue-500" /> },
+      { name: "Rust", icon: <SiRust className="text-orange-500" /> },
     ],
   },
   {
     label: "Frameworks",
     items: [
-      { name: "React", icon: <FaReact className="text-sky-400" /> },
       { name: "Next.js", icon: <SiNextdotjs /> },
-      { name: "Express.js", icon: <SiExpress /> },
+      { name: "Anchor", icon: <FaAnchor className="text-blue-400" /> },
       { name: "NestJS", icon: <SiNestjs className="text-red-400" /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
-      ...webdev
-        .filter((s) => s.name === "React Native")
-        .map((s) => ({ name: s.name, icon: s.icon })),
+      { name: "Foundry", icon: <GiAnvil className="text-amber-600" /> },
+      { name: "Express.js", icon: <SiExpress className="text-gray-400" /> },
     ],
   },
   {
-    label: "Tools",
+    label: "DevOps",
     items: [
-      { name: "Drizzle", icon: <SiDrizzle className="text-yellow-500" /> },
-      { name: "Prisma", icon: <SiPrisma className="text-blue-500" /> },
+      { name: "AWS", icon: <FaAws className="text-orange-500" /> },
       { name: "Docker", icon: <SiDocker className="text-blue-400" /> },
-      { name: "OpenAI", icon: <SiOpenai /> },
-      ...tools
-        .filter((s) => ["Jest", "Cypress"].includes(s.name))
-        .map((s) => ({ name: s.name, icon: s.icon })),
-    ],
-  },
-  {
-    label: "Platforms",
-    items: [
-      { name: "GitHub", icon: <FaGithub /> },
-      { name: "Netlify", icon: <SiNetlify className="text-teal-400" /> },
-      { name: "Vercel", icon: <SiVercel /> },
-      ...devops
-        .filter((s) => s.name === "AWS")
-        .map((s) => ({ name: s.name, icon: s.icon })),
-    ],
-  },
-  {
-    label: "Softwares",
-    items: [
-      { name: "Cursor", icon: <VscVscode className="text-blue-400" /> },
-      { name: "VS Code", icon: <VscVscode className="text-blue-500" /> },
-      { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-      ...database
-        .filter((s) => ["MySQL", "Redis"].includes(s.name))
-        .map((s) => ({ name: s.name, icon: s.icon })),
+      { name: "Kubernetes", icon: <SiKubernetes className="text-blue-500" /> },
+      { name: "CI/CD", icon: <SiGithubactions className="text-gray-400" /> },
     ],
   },
 ];

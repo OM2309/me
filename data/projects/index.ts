@@ -2,13 +2,13 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    name: "Portfolio Website",
+    name: "Readme Design",
     description:
-      "A personal portfolio built with Next.js, Tailwind, and shadcn/ui showcasing skills, experience, and GitHub contributions.",
-    image: "/images/portfolio-image.jpg",
-    technologies: ["Next.js", "shadcn/ui", "drizzle", "betterauth"],
-    status: "building",
-    link: "https://anurag-uat.vercel.app/",
+      "A visual drag-and-drop editor for creating stunning GitHub READMEs with live preview, AI autofill, 50+ templates, and one-click push to GitHub.",
+    image: "/images/readme.png",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Supabase"],
+    status: "complete",
+    link: "https://readme-design.vercel.app/",
   },
   {
     name: "Sunlake Card",
