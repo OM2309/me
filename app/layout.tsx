@@ -102,7 +102,7 @@ export default function RootLayout({
               }}
             />
 
-            <Oneko />
+            {/* <Oneko /> */}
             {children}
             <Footer />
           </ThemeProvider>
