@@ -23,7 +23,7 @@ export default async function Home() {
           {/* Banner Cover Image */}
           <div className="relative w-full h-[160px] sm:h-[180px]  overflow-hidden bg-zinc-950">
             <Image
-              src="/images/blue.png"
+              src="/images/d.png"
               alt="Profile Banner"
               fill
               className="object-cover opacity-80 select-none pointer-events-none"

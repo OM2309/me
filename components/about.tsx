@@ -86,7 +86,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
       </div>
 
       {/* Name & Title */}
-      <div className="min-w-0">
+      {/* <div className="min-w-0">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
           OM
         </h1>
@@ -99,7 +99,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
         >
           {SUBTITLES[subtitleIndex]}
         </TextAnimate>
-      </div>
+      </div> */}
 
       {/* Metadata Columns */}
       {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 py-4.5 font-mono">
@@ -146,8 +146,7 @@ export default function About({ initialViewCount = 0 }: AboutProps) {
       {/* Bio Paragraphs */}
       <div className="space-y-4 text-[15px] sm:text-base leading-relaxed text-muted-foreground">
         <p>
-          I build modern, scalable web applications with a focus on performance, clean architecture, and great user experience.
-          Always exploring new technologies and continuously improving my skills to build better software.
+          I'm <strong className="font-semibold text-foreground">Anurag Sharma</strong>, a software developer passionate about building modern, scalable web applications with clean architecture, high performance, and great user experiences. I enjoy exploring new technologies and continuously improving my skills to build better software.
         </p>
       </div>
 
