@@ -93,8 +93,7 @@ Feb 2025 – Apr 2026 · Jaipur, India
 ---
  
 ## Contact
- 
-- Email: [23anuragsharma@gmail.com](mailto:23anuragsharma@gmail.com)
+ - Email: [23anuragsharma@gmail.com](mailto:23anuragsharma@gmail.com)
 - GitHub: [@OM2309](https://github.com/OM2309)
 - X: [@_whyom](https://x.com/_whyom)
 - LinkedIn: [anuragxcodes](https://linkedin.com/in/anuragxcodes)
