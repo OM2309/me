@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import {
   SiTypescript,
   SiJavascript,
@@ -24,6 +23,7 @@ import {
   SiFastify,
 } from "react-icons/si";
 import { FaJava, FaReact, FaGithub } from "react-icons/fa";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface TechItem {
   name: string;
@@ -31,8 +31,6 @@ interface TechItem {
 }
 
 export default function Technologies() {
-  const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
-
   const row1: TechItem[] = [
     { name: "TypeScript", icon: <SiTypescript className="text-[#3178C6] w-6 h-6 sm:w-[26px] sm:h-[26px]" /> },
     { name: "JavaScript", icon: <SiJavascript className="text-[#F7DF1E] bg-black rounded-sm w-6 h-6 sm:w-[26px] sm:h-[26px]" /> },
@@ -72,38 +70,32 @@ export default function Technologies() {
         {/* Row 1 */}
         <div className="flex flex-nowrap gap-3.5 sm:gap-4.5 items-center overflow-x-auto hide-scrollbar py-1">
           {row1.map((tech) => (
-            <div
-              key={tech.name}
-              className="relative group transition-transform duration-200 hover:scale-115 hover:rotate-2 cursor-pointer shrink-0"
-              onMouseEnter={() => setActiveTooltip(tech.name)}
-              onMouseLeave={() => setActiveTooltip(null)}
-            >
-              {tech.icon}
-              {activeTooltip === tech.name && (
-                <div className="absolute z-30 bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 px-2 py-1 text-[10px] font-medium font-mono text-zinc-100 bg-zinc-900 border border-zinc-800 rounded shadow-md pointer-events-none whitespace-nowrap">
-                  {tech.name}
+            <Tooltip key={tech.name}>
+              <TooltipTrigger asChild>
+                <div className="relative group transition-transform duration-200 hover:scale-115 hover:rotate-2 cursor-pointer shrink-0">
+                  {tech.icon}
                 </div>
-              )}
-            </div>
+              </TooltipTrigger>
+              <TooltipContent side="top" sideOffset={8}>
+                <p className="font-mono text-[10px] font-medium">{tech.name}</p>
+              </TooltipContent>
+            </Tooltip>
           ))}
         </div>
 
         {/* Row 2 */}
         <div className="flex flex-nowrap gap-3.5 sm:gap-4.5 items-center overflow-x-auto hide-scrollbar py-1">
           {row2.map((tech) => (
-            <div
-              key={tech.name}
-              className="relative group transition-transform duration-200 hover:scale-115 hover:rotate-2 cursor-pointer shrink-0"
-              onMouseEnter={() => setActiveTooltip(tech.name)}
-              onMouseLeave={() => setActiveTooltip(null)}
-            >
-              {tech.icon}
-              {activeTooltip === tech.name && (
-                <div className="absolute z-30 bottom-[calc(100%+8px)] left-1/2 -translate-x-1/2 px-2 py-1 text-[10px] font-medium font-mono text-zinc-100 bg-zinc-900 border border-zinc-800 rounded shadow-md pointer-events-none whitespace-nowrap">
-                  {tech.name}
+            <Tooltip key={tech.name}>
+              <TooltipTrigger asChild>
+                <div className="relative group transition-transform duration-200 hover:scale-115 hover:rotate-2 cursor-pointer shrink-0">
+                  {tech.icon}
                 </div>
-              )}
-            </div>
+              </TooltipTrigger>
+              <TooltipContent side="top" sideOffset={8}>
+                <p className="font-mono text-[10px] font-medium">{tech.name}</p>
+              </TooltipContent>
+            </Tooltip>
           ))}
         </div>
       </div>

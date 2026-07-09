@@ -23,7 +23,7 @@ export async function createComment(
       })
       .returning();
 
-    revalidatePath("/guestbook");
+    revalidatePath("/guest-book");
     return { success: true, comment: newComment };
   } catch (error) {
     console.error("Create comment error:", error);
@@ -58,7 +58,7 @@ export async function fetchComments() {
 export async function deleteComment(id: number) {
   try {
     const deletedComment = await db.delete(comment).where(eq(comment.id, id));
-    revalidatePath("/guestbook");
+    revalidatePath("/guest-book");
     return { success: true, comment: deletedComment };
   } catch (error) {
     console.error("Delete comment error:", error);

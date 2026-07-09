@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function SocialLinks() {
   const links = [
@@ -59,23 +60,22 @@ export default function SocialLinks() {
   return (
     <div className="flex items-center gap-4.5 pt-1.5 flex-wrap">
       {links.map((link) => (
-        <div key={link.label} className="relative inline-flex group">
-          <a
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={link.label}
-            className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100 transition-colors duration-150"
-          >
-            {link.icon}
-          </a>
-
-          {/* Custom Tooltip */}
-          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-3 py-1.5 text-[12.5px] font-medium rounded-lg whitespace-nowrap pointer-events-none transition-all duration-100 ease-out z-50 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 bg-[rgb(30,30,32)] text-[rgb(240,240,240)] shadow-[rgba(0,0,0,0.25)_0px_4px_6px_-1px,rgba(0,0,0,0.15)_0px_2px_4px_-1px]">
-            {link.label}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-[rgb(30,30,32)]"></div>
-          </div>
-        </div>
+        <Tooltip key={link.label}>
+          <TooltipTrigger asChild>
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.label}
+              className="text-zinc-500 dark:text-zinc-400 hover:text-black dark:hover:text-zinc-100 transition-colors duration-150 cursor-pointer"
+            >
+              {link.icon}
+            </a>
+          </TooltipTrigger>
+          <TooltipContent side="top" sideOffset={8}>
+            <p className="font-mono text-[10px] font-medium">{link.label}</p>
+          </TooltipContent>
+        </Tooltip>
       ))}
     </div>
   );

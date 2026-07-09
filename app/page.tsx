@@ -10,6 +10,7 @@ import BlogPost from "@/components/blog-post";
 import GithubContribution from "@/components/github-contribution";
 import Image from "next/image";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import Navbar from "@/components/navbar";
 
 export const revalidate = 60;
 
@@ -18,15 +19,16 @@ export default async function Home() {
 
   return (
     <>
+      <Navbar />
       <main className="bg-background text-foreground max-w-3xl mx-auto px-6 pb-24">
         <div className="flex flex-col gap-8 sm:gap-10">
           {/* Banner Cover Image */}
-          <div className="relative w-full h-[160px] sm:h-[180px]  overflow-hidden bg-zinc-950">
+          <div className="relative w-full h-[160px] sm:h-[180px] overflow-hidden bg-zinc-950 rounded-xl">
             <Image
               src="/images/d.png"
               alt="Profile Banner"
               fill
-              className="object-cover opacity-80 select-none pointer-events-none"
+              className="object-cover opacity-80 select-none pointer-events-none rounded-xl"
               priority
             />
 
